@@ -12,6 +12,8 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif'],
 })
 
 const merriweather = Merriweather({
@@ -19,6 +21,8 @@ const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
   variable: '--font-serif',
   display: 'swap',
+  preload: true,
+  fallback: ['Georgia', 'serif'],
 })
 
 export const metadata: Metadata = {
@@ -149,9 +153,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/merriweather.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <style dangerouslySetInnerHTML={{ __html: `
+          body { font-family: system-ui, -apple-system, sans-serif; }
+        `}} />
         
         {/* Structured Data for SEO */}
         <script

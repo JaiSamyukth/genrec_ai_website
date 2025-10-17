@@ -10,8 +10,11 @@ export function Testimonials() {
         <div className={theme.spacing.maxWidth}>
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6" style={{ color: theme.colors.text.primary }}>
-              Trusted by leaders who demand results
+              Real Results
             </h2>
+            <p className="text-lg mb-10 max-w-2xl mx-auto font-light" style={{ color: theme.colors.text.secondary }}>
+              From clients who experienced the difference.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <blockquote className="p-6 rounded-lg border" style={{ backgroundColor: theme.colors.background.primary }}>
                 <p className="italic text-lg" style={{ color: theme.colors.text.primary }}>
@@ -35,22 +38,22 @@ export function Testimonials() {
               </blockquote>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
-                <div className="text-xl font-bold" style={{ color: theme.colors.text.primary }}>15+</div>
-                <div className="text-sm" style={{ color: theme.colors.text.secondary }}>Enterprise Pilots</div>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>100%</div>
+                <div className="text-sm font-light" style={{ color: theme.colors.text.secondary }}>Founder-Led Projects</div>
               </div>
               <div>
-                <div className="text-xl font-bold" style={{ color: theme.colors.text.primary }}>98%</div>
-                <div className="text-sm" style={{ color: theme.colors.text.secondary }}>Client Retention</div>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>24/7</div>
+                <div className="text-sm font-light" style={{ color: theme.colors.text.secondary }}>Always Available</div>
               </div>
               <div>
-                <div className="text-xl font-bold" style={{ color: theme.colors.text.primary }}>4–6</div>
-                <div className="text-sm" style={{ color: theme.colors.text.secondary }}>Weeks to Deploy</div>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>100%</div>
+                <div className="text-sm font-light" style={{ color: theme.colors.text.secondary }}>Bespoke Solutions</div>
               </div>
               <div>
-                <div className="text-xl font-bold" style={{ color: theme.colors.text.primary }}>100%</div>
-                <div className="text-sm" style={{ color: theme.colors.text.secondary }}>Privacy Compliant</div>
+                <div className="text-2xl font-bold" style={{ color: theme.colors.text.primary }}>3</div>
+                <div className="text-sm font-light" style={{ color: theme.colors.text.secondary }}>Clients Per Quarter</div>
               </div>
             </div>
           </motion.div>

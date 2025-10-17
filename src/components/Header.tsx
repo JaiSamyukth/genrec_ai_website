@@ -14,6 +14,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { Menu, X } from 'lucide-react'
+import { ContactModal } from './ContactModal'
 
 const products = [
   {
@@ -46,22 +47,49 @@ const products = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [contactOpen, setContactOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      const currentScrollY = window.scrollY
+      
+      // Determine visibility
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setIsVisible(true) // Scrolling up or near top
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false) // Scrolling down
+      }
+      
+      setIsScrolled(currentScrollY > 50)
+      setLastScrollY(currentScrollY)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+
+    const handleMouseMove = (e: MouseEvent) => {
+      // Show header when cursor is within 100px of top
+      if (e.clientY < 100) {
+        setIsVisible(true)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [lastScrollY])
 
   return (
+    <>
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, type: 'spring' }}
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -100 }}
+      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
       className={cn(
-        'sticky top-0 z-50 w-full border-b transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 w-full border-b transition-all duration-300',
         isScrolled ? 'bg-white/95 backdrop-blur-sm' : 'bg-white'
       )}
     >
@@ -116,14 +144,16 @@ export function Header() {
           </NavigationMenu>
 
           <div className="flex items-center space-x-4">
-            <Link href="/contact" className="hidden lg:block">
-              <Button
-                variant="default"
-                className="bg-accent-metal hover:bg-accent-metal/90 text-white"
-              >
-                Request 20-min demo
-              </Button>
-            </Link>
+            <button
+              onClick={() => setContactOpen(true)}
+              className="hidden lg:block px-6 py-2 rounded-full font-bold transition-all shadow-lg hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(135deg, #C9A66B 0%, #B8955A 100%)',
+                color: '#0b0f1a'
+              }}
+            >
+              Contact
+            </button>
 
             <button
               className="lg:hidden"
@@ -194,6 +224,9 @@ export function Header() {
         </motion.div>
       )}
     </motion.header>
+    
+    <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+    </>
   )
 }
 

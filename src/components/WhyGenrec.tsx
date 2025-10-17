@@ -11,38 +11,38 @@ import { ScrollReveal } from '@/components/ScrollReveal'
 const reasons = [
   {
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400',
-    title: 'Secure Architecture',
-    description: "Your data remains under your control with enterprise-grade protections.",
+    title: 'Founder-Led',
+    description: "Work directly with Samyukth & Shyamnath. No middlemen. No junior devs.",
     color: 'blue',
   },
   {
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400',
-    title: 'Engineering Excellence',
-    description: "Built by engineers, for enterprises. Clean code, scalable architecture, and proper documentation.",
+    title: 'Always Here',
+    description: "2 AM bug? We answer. This isn't a job—it's our craft.",
     color: 'green',
   },
   {
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400',
-    title: 'Industry Expertise',
-    description: "We understand construction sites, hotel operations, and classroom dynamics. Domain knowledge matters.",
+    title: 'Zero Templates',
+    description: "Every project custom-built. Your challenge is unique. So is our solution.",
     color: 'purple',
   },
   {
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=400',
-    title: 'Rapid Deployment',
-    description: "From pilot to production in weeks, not months. Our systems are designed for quick wins.",
+    title: 'Real Results',
+    description: "40 hours → 4 hours. Manual chaos → automated precision.",
     color: 'amber',
   },
   {
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=400',
-    title: 'Enterprise Security',
-    description: "SOC 2 Type II compliant architecture. End-to-end encryption, audit logs, and role-based access.",
+    title: 'Obsessive Quality',
+    description: "We don't ship 'good enough.' We ship perfect.",
     color: 'red',
   },
   {
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=400',
-    title: 'Measurable ROI',
-    description: "Clear metrics, transparent reporting. We show impact on your bottom line, not just fancy dashboards.",
+    title: 'Built Fast',
+    description: "Weeks, not months. Because we know what we're doing.",
     color: 'indigo',
   },
 ]
@@ -72,17 +72,11 @@ export function WhyGenrec() {
       
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal animation="slideUp" className="text-center mb-16">
-          <motion.span 
-            className="inline-block px-4 py-2 bg-gradient-to-r from-accent-metal/10 to-accent-metal/5 text-accent-metal rounded-full text-sm font-bold uppercase tracking-wide mb-6"
-            whileHover={{ scale: 1.05 }}
-          >
-            Our Differentiators
-          </motion.span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-bg mb-6">
-            Why Industry Leaders Choose Genrec AI
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-bg mb-6 leading-tight">
+            Beyond Partnership
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Founder-driven engineering, secure architecture, and rapid delivery — for enterprises that demand measurable advantage.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
+            We obsess over details. We answer at 3 AM. We build what others can't.
           </p>
         </ScrollReveal>
 
@@ -164,14 +158,14 @@ export function WhyGenrec() {
 
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4" style={{ color: theme.colors.text.primary }}>
-              Ready to see measurable impact?
+              Join the Select Few
             </h3>
-            <p className="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">Schedule a 20-minute demo. We&apos;ll show a working pilot tailored to your use case — seeing beats reading.</p>
+            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-light">Private consultation with founders. No sales pitch. Just strategic conversation about your vision. Limited availability.</p>
             <a
               href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-accent-metal text-white rounded-lg hover:bg-accent-metal/90 transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-accent-metal text-white rounded-xl hover:bg-accent-metal/90 transition-all shadow-xl hover:shadow-2xl hover:scale-105 font-semibold"
             >
-              Schedule your demo →
+              Request Private Consultation →
             </a>
           </div>
         </motion.div>

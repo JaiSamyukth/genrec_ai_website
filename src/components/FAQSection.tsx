@@ -6,36 +6,36 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    question: "How quickly can we see ROI from your AI solutions?",
-    answer: "Most clients see measurable ROI within 4-8 weeks of implementation. Our rapid deployment approach and focus on high-impact use cases ensure you start seeing benefits quickly. We provide detailed metrics and dashboards to track improvements in efficiency, cost savings, and operational performance."
+    question: "What makes Genrec AI premium?",
+    answer: "We're founder-led, available 24/7, and we custom-build everything from scratch. No templates, no outsourcing, no shortcuts. Just obsessive excellence. You work directly with Samyukth & Shyamnath—the people who actually care about your success."
   },
   {
-    question: "How do you ensure our data remains private and secure?",
-    answer: "We follow a privacy-first architecture where your data never leaves your infrastructure unless explicitly authorized. All AI models can be deployed on-premise or in your private cloud. We're SOC 2 Type II compliant and follow enterprise-grade security practices including end-to-end encryption, audit logs, and role-based access control."
+    question: "Do you really answer calls at 3 AM?",
+    answer: "Yes. We love what we do. Your success is our success. We're not a department—we're founders who are genuinely invested. Text, call, email anytime. We answer."
   },
   {
-    question: "What industries do you specialize in?",
-    answer: "We specialize in construction, hospitality, and education sectors. Our deep domain expertise in these industries allows us to deliver tailored solutions that address specific challenges. However, our platform is flexible enough to adapt to other industries with similar operational complexities."
+    question: "Why should we pay premium pricing?",
+    answer: "Because you're getting premium quality. Founders building your product personally. 24/7 availability—not a ticket system. Bespoke solutions tailored to your unique needs. Lifelong support and partnership. That's not a service—it's a relationship."
   },
   {
-    question: "Do we need technical expertise to use your solutions?",
-    answer: "No technical expertise is required. Our solutions are designed with user-friendly interfaces that your existing staff can use immediately. We provide comprehensive training and ongoing support to ensure smooth adoption. Our team handles all technical aspects including setup, maintenance, and updates."
+    question: "How do you stay creative with every project?",
+    answer: "We don't follow templates or trends. Every project is a blank canvas. We solve problems through innovation, not imitation. Your challenges are unique—your solutions should be too."
   },
   {
-    question: "How do you handle integration with existing systems?",
-    answer: "Our API-first architecture ensures seamless integration with your existing tech stack. We support all major platforms and can work with legacy systems through our flexible integration layer. Our engineering team manages the entire integration process with minimal disruption to your operations."
+    question: "What if we need changes after launch?",
+    answer: "We're here. Forever. Your product evolves; so do we. Call us anytime—we'll hop on a call immediately. Ongoing optimization is included. This is a partnership, not a transaction."
   },
   {
-    question: "What kind of support do you provide?",
-    answer: "We offer 24/7 enterprise support with dedicated account managers and technical specialists. This includes proactive monitoring, regular optimization reviews, continuous model improvements, and immediate assistance for any issues. We also provide quarterly business reviews to ensure alignment with your evolving needs."
+    question: "How many clients do you take on?",
+    answer: "We limit ourselves to 3 new clients per quarter. Quality over quantity, always. This ensures we give each client our obsessive attention to detail and remain available 24/7."
   },
   {
-    question: "Can your solutions scale with our growth?",
-    answer: "Absolutely. Our cloud-native architecture is built to scale horizontally, handling everything from pilot programs to enterprise-wide deployments. Whether you're processing thousands or millions of data points, our infrastructure automatically scales to meet demand without performance degradation."
+    question: "What's your development process like?",
+    answer: "Deep discovery sessions to understand your vision. Bespoke design with no templates. Obsessive execution where we test and polish every detail. Then lifelong partnership—we don't hand off and disappear."
   },
   {
-    question: "What makes you different from other AI consultancies?",
-    answer: "Three key differentiators: 1) Engineering excellence - we're engineers first, building robust, production-ready systems. 2) Industry expertise - we deeply understand your sector's unique challenges. 3) Privacy-first approach - your data sovereignty is non-negotiable. We don't just consult; we build, deploy, and ensure success."
+    question: "Can you integrate with our existing systems?",
+    answer: "Absolutely. We're engineers first. We can work with any tech stack, any infrastructure, any complexity. And we'll make it seamless. That's what custom-built means."
   }
 ]
 
@@ -62,15 +62,15 @@ export function FAQSection() {
             initial={{ scale: 0.9, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4"
+            className="inline-block px-5 py-2 bg-gradient-to-r from-green-500/10 to-emerald-500/10 text-green-600 rounded-full text-sm font-semibold uppercase tracking-wider mb-4"
           >
-            FAQ
+            QUESTIONS & ANSWERS
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Frequently Asked Questions
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+            Everything You Need to Know
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Everything you need to know about our AI solutions and services
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+            Honest answers about our premium, founder-led approach
           </p>
         </motion.div>
 
@@ -139,12 +139,16 @@ export function FAQSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <p className="text-gray-600 mb-4">
-            Still have questions? We're here to help.
+          <p className="text-gray-600 mb-6 font-light">
+            Have more questions? Reach out directly to the founders.
           </p>
-          <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-            Contact Our Team
-          </button>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-metal to-yellow-500 text-white font-semibold rounded-xl hover:shadow-xl transition-all duration-300 transform"
+          >
+            Request Private Consultation →
+          </motion.button>
         </motion.div>
       </div>
     </section>

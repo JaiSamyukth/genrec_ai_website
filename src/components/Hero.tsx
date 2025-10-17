@@ -47,7 +47,15 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              {/* Badge removed per request (privacy-first emphasis) */}
+              {/* Badge - Power Signal */}
+              <motion.span
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                className="inline-block px-4 py-2 bg-accent-metal/10 text-accent-metal rounded-full text-sm font-bold uppercase tracking-wide mb-6"
+              >
+                Genrec AI — Privacy-First Engineering for Enterprise Dominance
+              </motion.span>
 
               {/* Main Heading */}
                <motion.h1
@@ -71,56 +79,77 @@ export function Hero() {
                 className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
                 style={{ color: theme.colors.text.secondary }}
               >
-                From rapid MVPs to full-scale AI products, we accelerate growth, minimize risk, and transform
+                From rapid MVPs to full-scale AI deployment, your data stays yours — always. We accelerate growth, minimize risk, and transform
                 <span style={{ color: theme.colors.accent.gold }}> construction</span>,
                 <span style={{ color: theme.colors.accent.gold }}> hospitality</span>, and
                 <span style={{ color: theme.colors.accent.gold }}> education</span>.
-                No compromises. Immediate impact. Real results.
+                {' '}No compromises. Immediate impact. Real results.
               </motion.p>
 
-              {/* CTA Buttons - Always visible and clickable */}
+              {/* CTA Buttons - Premium with enhanced animations */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+                transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col sm:flex-row gap-6 justify-center mb-14"
               >
                 <Link href="/contact">
-                  <button
-                    className="px-8 py-4 text-lg font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-2xl shadow-lg"
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: `0 20px 40px ${theme.colors.accent.goldGlow}`,
+                      transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group px-10 py-5 text-lg font-semibold rounded-xl transition-all shadow-xl relative overflow-hidden"
                     style={{ 
                       background: `linear-gradient(135deg, ${theme.colors.accent.gold} 0%, ${theme.colors.accent.goldHover} 100%)`,
                       color: theme.colors.text.dark,
-                      boxShadow: `0 10px 30px ${theme.colors.accent.goldGlow}`
                     }}
                   >
-                    Start Your Exclusive Journey
-                    <ArrowRight className="inline-block ml-2 h-5 w-5" />
-                  </button>
+                    <span className="relative z-10 flex items-center">
+                      Reserved for Select Clients
+                      <ArrowRight className="inline-block ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-amber-500"
+                      initial={{ x: '-100%' }}
+                      whileHover={{ x: 0 }}
+                      transition={{ duration: 0.3 }}
+                      style={{ opacity: 0.3 }}
+                    />
+                  </motion.button>
                 </Link>
                 <Link href="/products">
-                  <button
-                    className="px-8 py-4 text-lg font-semibold rounded-lg border-2 transition-all hover:scale-105 hover:bg-[#C9A66B]/10"
+                  <motion.button
+                    whileHover={{ 
+                      scale: 1.05,
+                      backgroundColor: 'rgba(201, 166, 107, 0.1)',
+                      borderColor: theme.colors.accent.goldHover,
+                      transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-10 py-5 text-lg font-semibold rounded-xl border-2 transition-all"
                     style={{ 
                       borderColor: theme.colors.accent.gold,
                       color: theme.colors.accent.gold,
                       backgroundColor: 'transparent'
                     }}
                   >
-                    Explore Your Next Advantage
-                  </button>
+                    Explore Premium Solutions
+                  </motion.button>
                 </Link>
               </motion.div>
 
-              {/* Trust Indicators */}
+              {/* Trust Indicators - Minimal */}
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-sm uppercase tracking-wider"
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="text-sm uppercase tracking-widest font-light"
                 style={{ color: theme.colors.text.secondary }}
               >
-                Engineered by Samyukth & Shyamnath • For enterprises that demand results
+                Samyukth & Shyamnath • Available 24/7 • Limited to 3 Clients Per Quarter
               </motion.p>
             </motion.div>
 
@@ -129,53 +158,55 @@ export function Hero() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-32"
             >
               {[
                 {
-                  icon: Shield,
-                  title: "Absolute Data Ownership",
-                  description: "Your ideas and data are never exposed. Zero third-party access. Total control.",
-                  image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=400"
+                  title: "Bespoke Engineering",
+                  description: "No templates. No shortcuts. Everything custom-built from scratch for your unique needs.",
+                  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
                 },
                 {
-                  icon: Zap,
-                  title: "Rapid Deployment, Instant Impact",
-                  description: "From pilot to production in weeks. Concepts turn into revenue-generating reality.",
-                  image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400"
+                  title: "Always Available",
+                  description: "Text us at 3 AM. We answer. Founders, not support teams.",
+                  image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=800"
                 },
                 {
-                  icon: Brain,
-                  title: "Intelligent Industry Mastery",
-                  description: "Construction, hospitality, education—we speak your language and amplify your edge.",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+                  title: "Results That Matter",
+                  description: "40-hour workflows become 4 hours. Manual chaos becomes automated precision.",
+                  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
                 }
               ].map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                  className="group relative overflow-hidden rounded-xl border"
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ 
+                    y: -15,
+                    scale: 1.02,
+                    boxShadow: '0 25px 50px -12px rgba(201, 166, 107, 0.25)',
+                    transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+                  }}
+                  className="group relative overflow-hidden rounded-2xl border backdrop-blur-sm"
                   style={{ 
-                    backgroundColor: theme.colors.background.secondary,
-                    borderColor: 'rgba(201, 166, 107, 0.2)'
+                    backgroundColor: 'rgba(17, 24, 39, 0.8)',
+                    borderColor: 'rgba(201, 166, 107, 0.3)'
                   }}
                 >
-                  <div className="h-48 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                     <img 
                       src={feature.image}
                       alt={feature.title}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-500"
+                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f1a] to-transparent opacity-80" />
                   </div>
                   <div className="p-6">
-                    <feature.icon className="w-10 h-10 mb-4" style={{ color: theme.colors.accent.gold }} />
-                    <h3 className="text-xl font-bold mb-2" style={{ color: theme.colors.text.primary }}>
+                    <h3 className="text-xl font-bold mb-3" style={{ color: theme.colors.text.primary }}>
                       {feature.title}
                     </h3>
-                    <p style={{ color: theme.colors.text.secondary }}>
+                    <p className="text-sm leading-relaxed" style={{ color: theme.colors.text.secondary }}>
                       {feature.description}
                     </p>
                   </div>
