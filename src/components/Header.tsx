@@ -31,6 +31,16 @@ const products = [
     href: '/products/restaurant-website',
     description: 'Drive reservations and boost revenue with stunning restaurant sites',
   },
+    {
+      title: 'Lumina IQ',
+      href: '/products/lumina-iq',
+      description: 'AI learning platform for personalized education at scale',
+    },
+    {
+      title: 'Tabble',
+      href: '/products/tabble',
+      description: 'Luxury table management app for hotels and restaurants',
+    },
 ]
 
 export function Header() {

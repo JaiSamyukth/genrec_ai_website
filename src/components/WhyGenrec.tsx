@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import { theme } from '@/lib/theme'
 import { MorphingBlob } from '@/components/animations/MorphingBlob'
 import { TreeAnimation } from '@/components/animations/TreeAnimation'
 import { TiltCard } from '@/components/animations/TiltCard'
@@ -10,8 +11,8 @@ import { ScrollReveal } from '@/components/ScrollReveal'
 const reasons = [
   {
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400',
-    title: 'Privacy-First Architecture',
-    description: "Your data stays yours. No third-party access, no selling, no compromise. We're GDPR and CCPA ready.",
+    title: 'Secure Architecture',
+    description: "Your data remains under your control with enterprise-grade protections.",
     color: 'blue',
   },
   {
@@ -78,11 +79,10 @@ export function WhyGenrec() {
             Our Differentiators
           </motion.span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-bg mb-6">
-            Why Industry Leaders Choose Us
+            Why Industry Leaders Choose Genrec AI
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We&apos;re not another AI vendor. We&apos;re your engineering partners,
-            building systems that actually work in production environments.
+            Founder-driven engineering, secure architecture, and rapid delivery — for enterprises that demand measurable advantage.
           </p>
         </ScrollReveal>
 
@@ -108,10 +108,9 @@ export function WhyGenrec() {
                     transition={{ duration: 0.6 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-xl font-bold text-white">
-                      {reason.title}
-                    </h3>
+
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-lg font-semibold">{reason.title}</h3>
                   </div>
                 </div>
                 
@@ -142,21 +141,39 @@ export function WhyGenrec() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 bg-gradient-to-br from-primary-bg to-slate-900 rounded-2xl p-8 md:p-12 text-center"
+          className="mt-16 rounded-2xl p-8 md:p-12"
         >
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-light-text mb-4">
-            Ready to see the difference?
-          </h3>
-          <p className="text-muted text-lg mb-6 max-w-2xl mx-auto">
-            Schedule a 20-minute demo. We&apos;ll show you a working pilot
-            tailored to your use case — because seeing beats reading.
-          </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-accent-metal text-white rounded-lg hover:bg-accent-metal/90 transition-colors"
-          >
-            Schedule your demo →
-          </a>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center mb-8">
+            <div>
+              <div className="text-3xl font-bold" style={{ color: 'var(--primary-bg)' }}>500+</div>
+              <div className="text-sm text-gray-600">Enterprise Clients</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold" style={{ color: 'var(--primary-bg)' }}>98%</div>
+              <div className="text-sm text-gray-600">Satisfaction Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold" style={{ color: 'var(--primary-bg)' }}>40%</div>
+              <div className="text-sm text-gray-600">Average Cost Reduction</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold" style={{ color: 'var(--primary-bg)' }}>24/7</div>
+              <div className="text-sm text-gray-600">Support</div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4" style={{ color: theme.colors.text.primary }}>
+              Ready to see measurable impact?
+            </h3>
+            <p className="text-gray-600 text-lg mb-6 max-w-2xl mx-auto">Schedule a 20-minute demo. We&apos;ll show a working pilot tailored to your use case — seeing beats reading.</p>
+            <a
+              href="/contact"
+              className="inline-flex items-center px-6 py-3 bg-accent-metal text-white rounded-lg hover:bg-accent-metal/90 transition-colors"
+            >
+              Schedule your demo →
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

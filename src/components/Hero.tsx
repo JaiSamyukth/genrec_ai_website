@@ -47,37 +47,21 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-6 py-3 mb-8 rounded-full border"
-                style={{ 
-                  backgroundColor: 'rgba(201, 166, 107, 0.1)',
-                  borderColor: 'rgba(201, 166, 107, 0.3)',
-                  color: theme.colors.accent.gold
-                }}
-              >
-                <Brain className="w-5 h-5" />
-                <span className="text-sm font-medium tracking-wider uppercase">
-                  Privacy-First AI Solutions
-                </span>
-              </motion.div>
+              {/* Badge removed per request (privacy-first emphasis) */}
 
               {/* Main Heading */}
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6"
-                style={{ color: theme.colors.text.primary }}
+               <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+             className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6"
+              style={{ color: theme.colors.text.primary }}
               >
-                We don't automate people,
-                <span className={`block mt-2 ${gradients.text}`}>
-                  we amplify them.
-                </span>
-              </motion.h1>
+                    We don’t just build software,
+                  <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600">
+                    we create leverage for your business.
+               </span>
+               </motion.h1>
 
               {/* Subheading */}
               <motion.p
@@ -87,11 +71,11 @@ export function Hero() {
                 className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
                 style={{ color: theme.colors.text.secondary }}
               >
-                Engineering-grade AI that respects privacy, scales with trust, and transforms
+                From rapid MVPs to full-scale AI products, we accelerate growth, minimize risk, and transform
                 <span style={{ color: theme.colors.accent.gold }}> construction</span>,
                 <span style={{ color: theme.colors.accent.gold }}> hospitality</span>, and
                 <span style={{ color: theme.colors.accent.gold }}> education</span>.
-                Let's build something real.
+                No compromises. Immediate impact. Real results.
               </motion.p>
 
               {/* CTA Buttons - Always visible and clickable */}
@@ -110,7 +94,7 @@ export function Hero() {
                       boxShadow: `0 10px 30px ${theme.colors.accent.goldGlow}`
                     }}
                   >
-                    Start Your Journey
+                    Start Your Exclusive Journey
                     <ArrowRight className="inline-block ml-2 h-5 w-5" />
                   </button>
                 </Link>
@@ -123,7 +107,7 @@ export function Hero() {
                       backgroundColor: 'transparent'
                     }}
                   >
-                    Explore Solutions
+                    Explore Your Next Advantage
                   </button>
                 </Link>
               </motion.div>
@@ -136,7 +120,7 @@ export function Hero() {
                 className="text-sm uppercase tracking-wider"
                 style={{ color: theme.colors.text.secondary }}
               >
-                Privacy is not optional • Built by engineers, for enterprises
+                Engineered by Samyukth & Shyamnath • For enterprises that demand results
               </motion.p>
             </motion.div>
 
@@ -150,20 +134,20 @@ export function Hero() {
               {[
                 {
                   icon: Shield,
-                  title: "Your Data, Your Rules",
-                  description: "Zero third-party access. Ever.",
+                  title: "Absolute Data Ownership",
+                  description: "Your ideas and data are never exposed. Zero third-party access. Total control.",
                   image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=400"
                 },
                 {
                   icon: Zap,
-                  title: "Production in Weeks",
-                  description: "Not months. Real deployment, real results.",
+                  title: "Rapid Deployment, Instant Impact",
+                  description: "From pilot to production in weeks. Concepts turn into revenue-generating reality.",
                   image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=400"
                 },
                 {
                   icon: Brain,
-                  title: "Industry Intelligence",
-                  description: "We speak construction, hospitality, and education fluently.",
+                  title: "Intelligent Industry Mastery",
+                  description: "Construction, hospitality, education—we speak your language and amplify your edge.",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
                 }
               ].map((feature, index) => (

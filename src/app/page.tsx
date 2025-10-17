@@ -7,6 +7,11 @@ import { TestimonialsSection } from '@/components/TestimonialsSection'
 import { IntegrationPartners } from '@/components/IntegrationPartners'
 import { FAQ } from '@/components/FAQ'
 import { CTASection } from '@/components/CTASection'
+import { Process } from '@/components/Process'
+import { WhyGenrec } from '@/components/WhyGenrec'
+import { Testimonials } from '@/components/Testimonials'
+import { Integrations } from '@/components/Integrations'
+import { FAQSection } from '@/components/FAQSection'
 import type { Metadata } from 'next'
 import { theme } from '@/lib/theme'
 
@@ -18,15 +23,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="flex flex-col" style={{ backgroundColor: theme.colors.background.primary }}>
-      <Hero />
-      <StatsSection />
-      <HowItWorks />
-      <WhyGenrecOptimized />
-      <TestimonialsSection />
-      <ClientsTrust />
-      <IntegrationPartners />
-      <FAQ />
-      <CTASection />
+  <Hero />
+  <Process />
+  <WhyGenrec />
+  <StatsSection />
+  <Testimonials />
+  <Integrations />
+  <FAQSection />
+  <CTASection />
+  <ClientsTrust />
     </div>
   )
 }
