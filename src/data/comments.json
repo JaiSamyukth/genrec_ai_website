@@ -1,0 +1,28 @@
+{
+  "privacy-first-ai-revolution": [
+    {
+      "id": "1",
+      "postSlug": "privacy-first-ai-revolution",
+      "name": "Michael Rodriguez",
+      "content": "Finally, someone who gets it. We've been burned by 'privacy-friendly' vendors before. The on-premise deployment option sealed the deal for us.",
+      "timestamp": "2024-01-16T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "postSlug": "privacy-first-ai-revolution",
+      "name": "Sarah Kim",
+      "content": "This approach is exactly what healthcare needs. HIPAA compliance isn't optional for us, and your zero-knowledge architecture is brilliant.",
+      "timestamp": "2024-01-16T14:45:00Z"
+    }
+  ],
+  "transforming-construction-with-ai": [
+    {
+      "id": "3",
+      "postSlug": "transforming-construction-with-ai",
+      "name": "Dave Thompson",
+      "content": "We implemented this on three sites last month. Already caught two near-misses that could have been serious. This tech is literally saving lives.",
+      "timestamp": "2024-01-11T09:15:00Z"
+    }
+  ],
+  "lumina-iq-personalized-learning": []
+}

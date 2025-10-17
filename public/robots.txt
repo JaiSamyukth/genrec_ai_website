@@ -1,0 +1,39 @@
+# Robots.txt for Genrec AI
+
+User-agent: *
+Allow: /
+
+# Directories
+Allow: /products/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /about
+Allow: /contact
+
+# Disallow admin or private paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /data/
+
+# Sitemap location
+Sitemap: https://genrecai.com/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
+
+# Specific bot rules
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
