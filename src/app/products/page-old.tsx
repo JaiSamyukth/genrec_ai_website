@@ -163,7 +163,7 @@ export default function ProductsPage() {
               Not Sure Which Product Fits?
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss your specific needs. We&apos;ll recommend the right
+              Let's discuss your specific needs. We'll recommend the right
               solution and show you a tailored demo.
             </p>
             <Link

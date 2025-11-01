@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-serif font-semibold text-primary-bg mb-4">Our Privacy Promise</h2>
             <p>
-              At Genrec AI, we believe your data is yours. We don&apos;t sell it, we don&apos;t share it
+              At Genrec AI, we believe your data is yours. We don't sell it, we don't share it
               without your explicit consent, and we use industry-standard security to protect it.
               This policy explains exactly what we collect, why, and how we handle it.
             </p>
@@ -106,16 +106,16 @@ export default function PrivacyPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-serif font-semibold text-primary-bg mb-4">Children's Privacy</h2>
             <p>
-              Our services are for enterprise clients. We don&apos;t knowingly collect
-              information from children under 16. If we discover we&apos;ve collected
-              such information, we&apos;ll delete it immediately.
+              Our services are for enterprise clients. We don't knowingly collect
+              information from children under 16. If we discover we've collected
+              such information, we'll delete it immediately.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-serif font-semibold text-primary-bg mb-4">Updates to This Policy</h2>
             <p>
-              We&apos;ll notify you of significant changes via email or a prominent
+              We'll notify you of significant changes via email or a prominent
               notice on our website. Continued use after changes constitutes
               acceptance of the updated policy.
             </p>
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6">
               <li>Right to know what personal information is collected</li>
               <li>Right to delete personal information</li>
-              <li>Right to opt-out of sale (we don&apos;t sell your data)</li>
+              <li>Right to opt-out of sale (we don't sell your data)</li>
               <li>Right to non-discrimination</li>
             </ul>
           </section>

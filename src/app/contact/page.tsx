@@ -9,15 +9,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-bg mb-4">
-              Let&apos;s Build Something Great Together
+              Let's Build Something Great Together
             </h1>
             <p className="text-lg text-muted max-w-2xl mx-auto">
-              Schedule a 20-minute demo. We&apos;ll show you a working pilot
+              Schedule a 20-minute demo. We'll show you a working pilot
               tailored to your use case — because seeing beats reading.
             </p>
           </div>

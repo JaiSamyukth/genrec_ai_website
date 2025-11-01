@@ -1,5 +1,6 @@
-import { HeroRedesign } from '@/components/HeroRedesign'
+import { Hero } from '@/components/Hero'
 import { OurWork } from '@/components/OurWork'
+import { WorkShowcase } from '@/components/WorkShowcase'
 import { LuminaIQSection } from '@/components/LuminaIQSection'
 import { HowItWorksRedesign } from '@/components/HowItWorksRedesign'
 import { WhoWeAre } from '@/components/WhoWeAre'
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="flex flex-col bg-white">
-      <HeroRedesign />
+      <Hero />
       <OurWork />
+      <WorkShowcase />
       <LuminaIQSection />
       <HowItWorksRedesign />
       <WhoWeAre />

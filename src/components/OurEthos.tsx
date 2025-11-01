@@ -11,11 +11,6 @@ export function OurEthos() {
 
   return (
     <section className="relative bg-white py-32 sm:py-40">
-      {/* Background Lines */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
-      </div>
-
       <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
         <motion.div
           ref={ref}

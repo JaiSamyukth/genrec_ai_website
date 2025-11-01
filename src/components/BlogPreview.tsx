@@ -21,7 +21,7 @@ const blogPosts = [
   {
     id: 'ai-hospitality-revolution',
     title: 'Why Hotels Need More Than Just Another App',
-    excerpt: "The hospitality industry doesn&apos;t need more apps. It needs thoughtful technology that enhances human service.",
+    excerpt: "The hospitality industry doesn't need more apps. It needs thoughtful technology that enhances human service.",
     author: 'Shyamnath Sankar',
     date: new Date('2024-01-10'),
     readTime: '5 min read',

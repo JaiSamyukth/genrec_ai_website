@@ -16,7 +16,7 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['localhost'],
+    domains: ['localhost', 'images.unsplash.com'],
   },
   headers: async () => {
     return [

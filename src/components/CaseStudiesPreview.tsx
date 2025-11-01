@@ -66,7 +66,7 @@ export function CaseStudiesPreview() {
             Pilot Success Stories
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real implementations, measurable results. See how we&apos;ve helped
+            Real implementations, measurable results. See how we've helped
             enterprises transform their operations with AI.
           </p>
         </ScrollReveal>

@@ -61,7 +61,7 @@ export function FoundersPreview() {
             Meet the Founders
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Engineers first. We build what we&apos;d want to use ourselves—privacy-first, 
+            Engineers first. We build what we'd want to use ourselves—privacy-first, 
             production-ready, and purpose-built for real-world challenges.
           </p>
         </ScrollReveal>

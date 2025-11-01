@@ -86,7 +86,7 @@ const caseStudies = [
       { metric: '50%', description: 'Reduction in food waste' },
       { metric: '20%', description: 'Increase in revenue' },
     ],
-    quote: "The integration solved problems we didn&apos;t even know we had.",
+    quote: "The integration solved problems we didn't even know we had.",
     quoteAuthor: 'Operations Director',
     gradient: 'from-purple-500 to-pink-600',
     tags: ['Integration', 'Efficiency', 'Analytics'],
