@@ -6,7 +6,7 @@ import { Mail, Linkedin, ArrowRight } from 'lucide-react'
 
 const founders = [
   {
-    name: 'Jai Samyukth',
+    name: 'Jai Samyukth B U',
     role: 'Co-Founder & Chief Architect',
     bio: 'Software architect specializing in privacy-first AI, end-to-end product development, and refined UX. Founder of Tabble. Leads technical vision, scalable architecture, and product execution.',
     email: 'jaisamyukth@gmail.com',
@@ -24,6 +24,16 @@ const founders = [
     education: 'V.S.B. Engineering College',
     expertise: ['AI Strategy', 'Business Development', 'Product Management', 'Partnerships'],
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800',
+  },
+  {
+    name: 'Harish V',
+    role: 'Technical Lead',
+    bio: 'Technical lead driving engineering excellence across all Genrec AI products. Oversees system architecture, code quality, and technical execution.',
+    email: 'harish@genrecai.com',
+    linkedin: 'https://linkedin.com/in/harishv',
+    education: 'V.S.B. Engineering College',
+    expertise: ['Technical Leadership', 'System Architecture', 'Code Review', 'Engineering Management'],
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800',
   },
 ]
 

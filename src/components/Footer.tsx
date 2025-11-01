@@ -31,11 +31,10 @@ export function Footer() {
               Genrec<span className="text-accent-metal">AI</span>
             </h3>
             <p className="text-muted text-sm mb-4">
-              Privacy-first AI solutions for construction, hospitality, and education.
-              Engineering-grade systems that scale.
+              Built by precision. Driven by purpose. We build intelligent systems that work where others fail.
             </p>
             <p className="text-muted text-xs">
-              We respect your privacy. No third-party selling of data.
+              © 2025 Genrec AI. All rights reserved. Built with purpose. Designed for performance.
             </p>
           </div>
 
@@ -117,7 +116,7 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-muted text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} Genrec AI. All rights reserved.
+              Innovation isn't a tagline — it's survival.
             </p>
             <ul className="flex space-x-6">
               {legal.map((item) => (

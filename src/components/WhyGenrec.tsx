@@ -12,7 +12,7 @@ const reasons = [
   {
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400',
     title: 'Founder-Led',
-    description: "Work directly with Samyukth & Shyamnath. No middlemen. No junior devs.",
+    description: "Work directly with Jai Samyukth B U and Shyamnath Sankar, with Harish V as technical lead. No middlemen. No junior devs.",
     color: 'blue',
   },
   {
@@ -24,7 +24,7 @@ const reasons = [
   {
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400',
     title: 'Zero Templates',
-    description: "Every project custom-built. Your challenge is unique. So is our solution.",
+    description: "Built from nothing but code, caffeine, and conviction. No investors. No paid tools. No noise. Just pure engineering.",
     color: 'purple',
   },
   {
@@ -73,10 +73,10 @@ export function WhyGenrec() {
       <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal animation="slideUp" className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-primary-bg mb-6 leading-tight">
-            Beyond Partnership
+            Our Ethos
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
-            We obsess over details. We answer at 3 AM. We build what others can't.
+            We don't chase trends. We build products that outlast them. Innovation here isn't a tagline — it's survival.
           </p>
         </ScrollReveal>
 
@@ -158,9 +158,9 @@ export function WhyGenrec() {
 
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4" style={{ color: theme.colors.text.primary }}>
-              Join the Select Few
+              Work With Us
             </h3>
-            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-light">Private consultation with founders. No sales pitch. Just strategic conversation about your vision. Limited availability.</p>
+            <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto font-light">We partner with teams and institutions that value precision, performance, and long-term impact. If that sounds like you, reach out.</p>
             <a
               href="/contact"
               className="inline-flex items-center px-8 py-4 bg-accent-metal text-white rounded-xl hover:bg-accent-metal/90 transition-all shadow-xl hover:shadow-2xl hover:scale-105 font-semibold"

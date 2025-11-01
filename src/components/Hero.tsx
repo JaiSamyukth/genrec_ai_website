@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
@@ -54,7 +54,7 @@ export function Hero() {
                 transition={{ duration: 0.6 }}
                 className="inline-block px-4 py-2 bg-accent-metal/10 text-accent-metal rounded-full text-sm font-bold uppercase tracking-wide mb-6"
               >
-                Genrec AI — Privacy-First Engineering for Enterprise Dominance
+                Built by precision. Driven by purpose.
               </motion.span>
 
               {/* Main Heading */}
@@ -65,9 +65,9 @@ export function Hero() {
              className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6"
               style={{ color: theme.colors.text.primary }}
               >
-                    We don’t just build software,
+                    We build intelligent systems
                   <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-600">
-                    we create leverage for your business.
+                    that work where others fail
                </span>
                </motion.h1>
 
@@ -79,11 +79,9 @@ export function Hero() {
                 className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
                 style={{ color: theme.colors.text.secondary }}
               >
-                From rapid MVPs to full-scale AI deployment, your data stays yours — always. We accelerate growth, minimize risk, and transform
-                <span style={{ color: theme.colors.accent.gold }}> construction</span>,
-                <span style={{ color: theme.colors.accent.gold }}> hospitality</span>, and
-                <span style={{ color: theme.colors.accent.gold }}> education</span>.
-                {' '}No compromises. Immediate impact. Real results.
+                Software designed for performance, not pretense. From custom CRMs to AI learning platforms, 
+                Genrec AI creates tools that adapt, evolve, and scale. No templates. No shortcuts. No noise. 
+                Just code that works flawlessly.
               </motion.p>
 
               {/* CTA Buttons - Premium with enhanced animations */}
@@ -149,7 +147,7 @@ export function Hero() {
                 className="text-sm uppercase tracking-widest font-light"
                 style={{ color: theme.colors.text.secondary }}
               >
-                Samyukth & Shyamnath • Available 24/7 • Limited to 3 Clients Per Quarter
+                Founded by Jai Samyukth B U & Shyamnath Sankar, with Harish V as technical lead • Available 24/7 • Limited to 3 Clients Per Quarter
               </motion.p>
             </motion.div>
 
