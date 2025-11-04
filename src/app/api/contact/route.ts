@@ -1,15 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { z } from 'zod'
+import { rateLimit, getClientIp, checkHoneypot } from '@/lib/rateLimit'
 
 const contactSchema = z.object({
-  name: z.string().min(2),
-  role: z.string().min(2),
-  company: z.string().min(2),
-  email: z.string().email(),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  role: z.string().min(2, 'Role must be at least 2 characters'),
+  company: z.string().min(2, 'Company must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
   phone: z.string().optional(),
-  product: z.string(),
-  message: z.string().min(10),
+  product: z.string().min(1, 'Please select a product'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+  honeypot: z.string().optional(), // Honeypot field for bot detection
+  consent: z.boolean().refine(val => val === true, 'You must agree to be contacted'),
 })
 
 // For development, save submissions to a JSON file
@@ -43,7 +46,39 @@ async function saveToFile(data: any) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting - 5 requests per minute per IP
+    const clientIp = getClientIp(request)
+    const rateLimitResult = rateLimit(clientIp, {
+      maxRequests: 5,
+      windowMs: 60000, // 1 minute
+    })
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { 
+          error: 'Too many requests. Please try again later.',
+          retryAfter: Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000)
+        },
+        { 
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil((rateLimitResult.resetAt - Date.now()) / 1000)),
+          }
+        }
+      )
+    }
+
     const body = await request.json()
+    
+    // Honeypot check - bot detection
+    if (!checkHoneypot(body.honeypot)) {
+      console.warn('Bot detected via honeypot:', clientIp)
+      // Return success to avoid revealing honeypot
+      return NextResponse.json(
+        { message: 'Message sent successfully' },
+        { status: 200 }
+      )
+    }
     
     // Validate the request body
     const validatedData = contactSchema.parse(body)
@@ -128,7 +163,10 @@ export async function POST(request: NextRequest) {
     }
     
     return NextResponse.json(
-      { message: 'Message sent successfully' },
+      { 
+        message: 'Message sent successfully',
+        ticketId: Date.now().toString(), // In production, use proper ticket ID generation
+      },
       { status: 200 }
     )
   } catch (error) {

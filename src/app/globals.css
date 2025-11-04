@@ -333,7 +333,7 @@ section {
   }
   
   ::selection {
-    @apply bg-accent-metal/20 text-accent-metal;
+    @apply bg-accent-blue/10 text-accent-blue;
   }
 }
 
