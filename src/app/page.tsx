@@ -1,8 +1,6 @@
 import { HeroParallax } from '@/components/HeroParallax'
 import { OurWork } from '@/components/OurWork'
 import { WorkShowcase } from '@/components/WorkShowcase'
-import { LuminaIQSection } from '@/components/LuminaIQSection'
-import { HowItWorksRedesign } from '@/components/HowItWorksRedesign'
 import { WhoWeAre } from '@/components/WhoWeAre'
 import { OurEthos } from '@/components/OurEthos'
 import { WorkWithUs } from '@/components/WorkWithUs'
@@ -16,12 +14,10 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col bg-primary-bg">
       <HeroParallax />
       <OurWork />
       <WorkShowcase />
-      <LuminaIQSection />
-      <HowItWorksRedesign />
       <WhoWeAre />
       <OurEthos />
       <WorkWithUs />

@@ -34,7 +34,7 @@ export function OurWork() {
   })
 
   return (
-    <section id="our-work" className="bg-white py-24 sm:py-32">
+    <section id="our-work" className="bg-primary-bg py-24 sm:py-32 border-y border-accent-gold/10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -44,11 +44,11 @@ export function OurWork() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl">
-            Our Work Speaks in <span className="font-normal">Results</span>
+          <h2 className="mb-6 text-4xl font-light tracking-tight text-light-text sm:text-5xl">
+            Our Work Speaks in <span className="font-normal bg-gradient-to-r from-accent-gold to-accent-gold-hover bg-clip-text text-transparent">Results</span>
           </h2>
-          <p className="text-lg leading-relaxed text-gray-600">
-            We've engineered everything from enterprise-grade CRM systems to intelligent web platforms, 
+          <p className="text-lg leading-relaxed text-secondary-text">
+            We've engineered everything from <span className="text-accent-gold">enterprise-grade CRM systems</span> to intelligent web platforms, 
             automation dashboards, and institutional feedback systems. Every product is built from scratch — 
             no templates, no shortcuts, no noise. Just code that works flawlessly.
           </p>
@@ -64,22 +64,22 @@ export function OurWork() {
               transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
               className="group relative"
             >
-              <div className="relative border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-gray-900 hover:shadow-xl">
-                {/* Icon */}
-                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center border border-gray-900 bg-white transition-colors duration-300 group-hover:bg-gray-900">
-                  <project.icon className="h-7 w-7 text-gray-900 transition-colors duration-300 group-hover:text-white" />
+              <div className="relative border border-accent-gold/20 bg-secondary-bg p-8 transition-all duration-300 hover:border-accent-gold hover:shadow-2xl hover:shadow-accent-gold/20">
+                {/* Icon with gold theme */}
+                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center border-2 border-accent-gold bg-transparent transition-all duration-300 group-hover:bg-accent-gold group-hover:scale-110">
+                  <project.icon className="h-7 w-7 text-accent-gold transition-colors duration-300 group-hover:text-primary-bg" />
                 </div>
 
                 {/* Content */}
-                <h3 className="mb-3 text-xl font-medium text-gray-900">
+                <h3 className="mb-3 text-xl font-medium text-light-text group-hover:text-accent-gold transition-colors">
                   {project.title}
                 </h3>
-                <p className="leading-relaxed text-gray-600">
+                <p className="leading-relaxed text-secondary-text">
                   {project.description}
                 </p>
 
-                {/* Hover Line */}
-                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gray-900 transition-all duration-300 group-hover:w-full" />
+                {/* Hover Line with gold gradient */}
+                <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-accent-gold to-accent-gold-hover transition-all duration-300 group-hover:w-full" />
               </div>
             </motion.div>
           ))}

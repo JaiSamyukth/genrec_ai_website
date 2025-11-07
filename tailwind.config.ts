@@ -11,44 +11,48 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Clean white minimal theme with accent blue
-        'primary-bg': '#FFFFFF',
-        'accent-blue': '#081CFF',
-        'accent-blue-hover': '#0618E0',
-        'light-text': '#000000',
-        'secondary-text': '#6B7280',
+        // Genrec AI Luxury Theme - Gold & Midnight Black (per comprehensive documentation)
+        'primary-bg': '#0b0f1a', // Midnight black
+        'secondary-bg': '#111827', // Slightly lighter black
+        'tertiary-bg': '#1f2937', // Dark gray
+        'accent-metal': '#C9A66B', // Primary metallic gold (matches logo)
+        'accent-gold': '#C9A66B',
+        'accent-gold-hover': '#D4B478',
+        'accent-gold-dark': '#B8955A',
+        'light-text': '#F7F7F7', // Crisp white
+        'secondary-text': '#9AA3B2', // Muted gray
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: '#081CFF',
-          foreground: '#FFFFFF',
+          DEFAULT: '#C9A66B', // Gold as primary
+          foreground: '#0b0f1a', // Dark text on gold
         },
         secondary: {
-          DEFAULT: '#F3F4F6',
-          foreground: '#111827',
+          DEFAULT: '#111827', // Lighter black
+          foreground: '#F7F7F7', // White text
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: '#F9FAFB',
-          foreground: '#6B7280',
+          DEFAULT: '#1f2937', // Dark gray
+          foreground: '#9AA3B2', // Muted gray text
         },
         accent: {
-          DEFAULT: '#081CFF',
-          foreground: '#FFFFFF',
+          DEFAULT: '#C9A66B', // Gold
+          foreground: '#0b0f1a', // Dark text on gold
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#111827',
+          DEFAULT: '#111827', // Dark cards
+          foreground: '#F7F7F7', // White text
         },
       },
       fontFamily: {

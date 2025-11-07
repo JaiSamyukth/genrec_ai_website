@@ -41,7 +41,7 @@ export function WorkWithUs() {
   }
 
   return (
-    <section className="bg-gray-50 py-24 sm:py-32">
+    <section className="bg-secondary-bg py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -51,11 +51,11 @@ export function WorkWithUs() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl">
-            Work With <span className="font-normal">Us</span>
+          <h2 className="mb-6 text-4xl font-light tracking-tight text-light-text sm:text-5xl">
+            Work With <span className="font-normal bg-gradient-to-r from-accent-gold to-accent-gold-hover bg-clip-text text-transparent">Us</span>
           </h2>
-          <p className="text-lg leading-relaxed text-gray-600">
-            We partner with teams and institutions that value precision, performance, 
+          <p className="text-lg leading-relaxed text-secondary-text">
+            We partner with teams and institutions that value <span className="text-accent-gold">precision</span>, <span className="text-accent-gold">performance</span>, 
             and long-term impact.
             <br />
             <br />
@@ -71,11 +71,11 @@ export function WorkWithUs() {
           className="mx-auto mt-16 max-w-xl"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Field */}
+            {/* Name Field with luxury styling */}
             <div>
               <label 
                 htmlFor="name" 
-                className="mb-2 block text-sm font-medium tracking-wider text-gray-900"
+                className="mb-2 block text-sm font-medium tracking-wider text-accent-gold uppercase"
               >
                 NAME
               </label>
@@ -86,16 +86,16 @@ export function WorkWithUs() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                className="w-full border border-accent-gold/20 bg-tertiary-bg px-4 py-3 text-light-text transition-colors focus:border-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold/50 placeholder:text-secondary-text"
                 placeholder="Your name"
               />
             </div>
 
-            {/* Email Field */}
+            {/* Email Field with luxury styling */}
             <div>
               <label 
                 htmlFor="email" 
-                className="mb-2 block text-sm font-medium tracking-wider text-gray-900"
+                className="mb-2 block text-sm font-medium tracking-wider text-accent-gold uppercase"
               >
                 EMAIL
               </label>
@@ -106,16 +106,16 @@ export function WorkWithUs() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                className="w-full border border-accent-gold/20 bg-tertiary-bg px-4 py-3 text-light-text transition-colors focus:border-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold/50 placeholder:text-secondary-text"
                 placeholder="your.email@example.com"
               />
             </div>
 
-            {/* Message Field */}
+            {/* Message Field with luxury styling */}
             <div>
               <label 
                 htmlFor="message" 
-                className="mb-2 block text-sm font-medium tracking-wider text-gray-900"
+                className="mb-2 block text-sm font-medium tracking-wider text-accent-gold uppercase"
               >
                 MESSAGE
               </label>
@@ -126,18 +126,18 @@ export function WorkWithUs() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-gray-900 transition-colors focus:border-gray-900 focus:outline-none focus:ring-1 focus:ring-gray-900"
+                className="w-full resize-none border border-accent-gold/20 bg-tertiary-bg px-4 py-3 text-light-text transition-colors focus:border-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold/50 placeholder:text-secondary-text"
                 placeholder="Tell us about your project..."
               />
             </div>
 
-            {/* Submit Button */}
+            {/* Submit Button with gold gradient */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden border border-gray-900 bg-gray-900 px-8 py-4 text-white transition-all duration-300 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative flex w-full items-center justify-center gap-2 overflow-hidden bg-gradient-to-r from-accent-gold to-accent-gold-hover px-8 py-4 text-primary-bg font-semibold transition-all duration-300 hover:from-accent-gold-hover hover:to-accent-gold-dark hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-accent-gold/30"
             >
-              <span className="text-sm font-medium tracking-wider">
+              <span className="text-sm font-medium tracking-wider uppercase">
                 {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
               </span>
               {!isSubmitting && <Send className="h-4 w-4" />}

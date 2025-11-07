@@ -71,7 +71,7 @@ export function WorkShowcase() {
   }
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative w-full bg-white overflow-hidden">
       {/* No padding - full screen utilization */}
       <div className="relative w-full py-32">
         {/* Section Header */}
@@ -81,7 +81,7 @@ export function WorkShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-wider text-gray-500 mb-4"
+            className="text-sm uppercase tracking-wider text-accent-gold mb-4 font-semibold"
           >
             Portfolio
           </motion.p>
@@ -92,112 +92,124 @@ export function WorkShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl font-light text-gray-900"
           >
-            Our Work <span className="font-bold">Speaks in Results</span>
+            Our Work <span className="font-bold bg-gradient-to-r from-accent-gold to-accent-gold-hover bg-clip-text text-transparent">Speaks in Results</span>
           </motion.h2>
         </div>
 
         {/* Interactive Carousel Container */}
-        <div 
-          ref={containerRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]"
-          style={{ perspective: '1000px' }}
-        >
-          {/* Main Image Display with 3D Rotation */}
-          <motion.div
-            style={{
-              rotateX,
-              rotateY,
-              transformStyle: 'preserve-3d'
-            }}
-            className="relative w-full max-w-5xl h-full px-6 lg:px-12"
-          >
-            <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
-              {/* Image Carousel */}
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
-                className="relative w-full h-full"
-              >
-                <Image
-                  src={showcaseImages[currentIndex].url}
-                  alt={showcaseImages[currentIndex].alt}
-                  fill
-                  className="object-cover"
-                  priority={currentIndex === 0}
-                />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
-                {/* Image Title */}
-                <div className="absolute bottom-8 left-8 z-10">
-                  <motion.h3
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-3xl md:text-5xl font-bold text-white"
-                  >
-                    {showcaseImages[currentIndex].title}
-                  </motion.h3>
-                </div>
-                
-                {/* Counter Badge */}
-                <div className="absolute bottom-8 right-8 z-10">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: 0.3 }}
-                    className="bg-white/90 backdrop-blur-md rounded-2xl px-6 py-3 shadow-xl"
-                  >
-                    <span className="text-2xl md:text-4xl font-bold text-gray-900">
-                      {currentIndex + 1}/{showcaseImages.length}
-                    </span>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
+        <div className="relative w-full px-6 lg:px-12">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_200px] gap-8 items-center">
+            {/* Main Image Display with 3D Rotation */}
+            <motion.div
+              ref={containerRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              style={{
+                rotateX,
+                rotateY,
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+              className="relative w-full h-[600px]"
+            >
+              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
+                {/* Image Carousel */}
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.5 }}
+                  className="relative w-full h-full"
+                >
+                  <Image
+                    src={showcaseImages[currentIndex].url}
+                    alt={showcaseImages[currentIndex].alt}
+                    fill
+                    className="object-cover"
+                    priority={currentIndex === 0}
+                  />
+                  
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  
+                  {/* Image Title */}
+                  <div className="absolute bottom-8 left-8 z-10">
+                    <motion.h3
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      className="text-3xl md:text-5xl font-bold text-white"
+                    >
+                      {showcaseImages[currentIndex].title}
+                    </motion.h3>
+                  </div>
+                  
+                  {/* Counter Badge */}
+                  <div className="absolute bottom-8 right-8 z-10">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4, delay: 0.3 }}
+                      className="bg-white/90 backdrop-blur-md rounded-2xl px-6 py-3 shadow-xl"
+                    >
+                      <span className="text-2xl md:text-4xl font-bold text-gray-900">
+                        {currentIndex + 1}/{showcaseImages.length}
+                      </span>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? showcaseImages.length - 1 : prev - 1))}
-            className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
-            aria-label="Previous image"
-          >
-            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button
-            onClick={() => setCurrentIndex((prev) => (prev === showcaseImages.length - 1 ? 0 : prev + 1))}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
-            aria-label="Next image"
-          >
-            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+            {/* Vertical Thumbnail Navigation - Right Side */}
+            <div className="hidden lg:flex flex-col gap-4 h-[600px] py-4">
+              {showcaseImages.map((image, index) => (
+                <motion.button
+                  key={image.id}
+                  onClick={() => setCurrentIndex(index)}
+                  whileHover={{ scale: 1.05, x: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`relative flex-1 rounded-xl overflow-hidden transition-all ${
+                    index === currentIndex
+                      ? 'ring-4 ring-accent-gold shadow-xl'
+                      : 'ring-2 ring-gray-300 opacity-50 hover:opacity-100'
+                  }`}
+                >
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                  />
+                  {index === currentIndex && (
+                    <div className="absolute inset-0 bg-accent-gold/20 backdrop-blur-[1px]" />
+                  )}
+                  {/* Thumbnail label */}
+                  <div className="absolute bottom-2 left-2 right-2">
+                    <p className="text-xs font-semibold text-white drop-shadow-lg truncate">
+                      {image.title}
+                    </p>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Thumbnail Navigation */}
-        <div className="mt-12 px-6 lg:px-12">
-          <div className="flex justify-center gap-4 flex-wrap max-w-4xl mx-auto">
+        {/* Mobile Horizontal Thumbnails - Only on mobile */}
+        <div className="mt-12 px-6 lg:hidden">
+          <div className="flex justify-center gap-4 overflow-x-auto pb-4">
             {showcaseImages.map((image, index) => (
               <motion.button
                 key={image.id}
                 onClick={() => setCurrentIndex(index)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`relative w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden transition-all ${
+                className={`relative w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden transition-all ${
                   index === currentIndex
-                    ? 'ring-4 ring-gray-900 shadow-xl'
-                    : 'ring-2 ring-gray-200 opacity-60 hover:opacity-100'
+                    ? 'ring-4 ring-accent-gold shadow-xl'
+                    : 'ring-2 ring-gray-300 opacity-60 hover:opacity-100'
                 }`}
               >
                 <Image
@@ -207,21 +219,21 @@ export function WorkShowcase() {
                   className="object-cover"
                 />
                 {index === currentIndex && (
-                  <div className="absolute inset-0 bg-gray-900/10" />
+                  <div className="absolute inset-0 bg-accent-gold/20" />
                 )}
               </motion.button>
             ))}
           </div>
         </div>
 
-        {/* Progress Indicators */}
-        <div className="mt-8 flex justify-center gap-2">
+        {/* Progress Indicators - Mobile only */}
+        <div className="mt-8 flex justify-center gap-2 lg:hidden">
           {showcaseImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-1 rounded-full transition-all ${
-                index === currentIndex ? 'w-12 bg-gray-900' : 'w-6 bg-gray-300'
+                index === currentIndex ? 'w-12 bg-accent-gold' : 'w-6 bg-gray-300'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

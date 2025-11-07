@@ -93,10 +93,10 @@ export function HeaderEnhanced() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/90 backdrop-blur-md shadow-sm' 
-            : 'bg-white'
+            ? 'bg-white backdrop-blur-lg border-b border-gray-200 shadow-sm' 
+            : 'bg-white/95 backdrop-blur-md'
         }`}
         initial={{ y: 0 }}
         animate={{ y: isVisible ? 0 : -100 }}
@@ -107,10 +107,16 @@ export function HeaderEnhanced() {
             {/* Logo */}
             <Link 
               href="/" 
-              className="text-2xl font-bold text-accent-blue hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 rounded"
+              className="text-2xl font-extrabold hover:opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-accent-gold focus:ring-offset-2 focus:ring-offset-white rounded px-2 py-1 relative z-50"
               aria-label="Genrec AI - Home"
             >
-              Genrec AI
+              <span style={{ color: '#000000' }}>Genrec</span>
+              <span style={{ 
+                background: 'linear-gradient(135deg, #C9A66B 0%, #D4B478 50%, #C9A66B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>AI</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -120,10 +126,10 @@ export function HeaderEnhanced() {
                   {item.submenu ? (
                     <>
                       <button
-                        className={`flex items-center gap-1 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue rounded px-2 py-1 ${
+                        className={`flex items-center gap-1 font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-gold rounded px-2 py-1 ${
                           pathname.startsWith(item.href)
-                            ? 'text-accent-blue'
-                            : 'text-gray-700 hover:text-accent-blue'
+                            ? 'text-accent-gold'
+                            : 'text-gray-700 hover:text-accent-gold'
                         }`}
                         aria-expanded="false"
                         aria-haspopup="true"
@@ -139,7 +145,7 @@ export function HeaderEnhanced() {
                             <Link
                               key={subitem.href}
                               href={subitem.href}
-                              className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent-blue transition-colors"
+                              className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-accent-gold transition-colors"
                             >
                               {subitem.name}
                             </Link>
@@ -150,10 +156,10 @@ export function HeaderEnhanced() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-blue rounded px-2 py-1 ${
+                      className={`font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-accent-gold rounded px-2 py-1 ${
                         pathname === item.href
-                          ? 'text-accent-blue'
-                          : 'text-gray-700 hover:text-accent-blue'
+                          ? 'text-accent-gold'
+                          : 'text-gray-700 hover:text-accent-gold'
                       }`}
                     >
                       {item.name}
@@ -165,7 +171,7 @@ export function HeaderEnhanced() {
               {/* CTA */}
               <Link
                 href="/contact"
-                className="px-6 py-3 bg-accent-blue text-white font-semibold rounded-lg hover:bg-accent-blue-hover transition-colors focus:outline-none focus:ring-4 focus:ring-accent-blue focus:ring-offset-2"
+                className="px-6 py-3 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-white font-semibold rounded-lg hover:from-accent-gold-hover hover:to-accent-gold-dark transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-accent-gold/50 focus:ring-offset-2 focus:ring-offset-white shadow-lg shadow-accent-gold/20"
               >
                 Get Started
               </Link>
@@ -174,7 +180,7 @@ export function HeaderEnhanced() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-gray-700 hover:text-accent-blue focus:outline-none focus:ring-2 focus:ring-accent-blue rounded"
+              className="lg:hidden p-2 text-gray-700 hover:text-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold rounded"
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -208,7 +214,7 @@ export function HeaderEnhanced() {
 
             {/* Menu panel */}
             <motion.div
-              className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl"
+              className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-secondary-bg shadow-2xl border-l border-accent-gold/20"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
@@ -216,11 +222,11 @@ export function HeaderEnhanced() {
             >
               <div className="flex flex-col h-full">
                 {/* Header */}
-                <div className="flex items-center justify-between p-6 border-b">
-                  <span className="text-xl font-bold text-accent-blue">Menu</span>
+                <div className="flex items-center justify-between p-6 border-b border-accent-gold/20">
+                  <span className="text-xl font-bold text-accent-gold-hover">Menu</span>
                   <button
                     onClick={() => setMobileMenuOpen(false)}
-                    className="p-2 text-gray-700 hover:text-accent-blue focus:outline-none focus:ring-2 focus:ring-accent-blue rounded"
+                    className="p-2 text-white hover:text-accent-gold-hover focus:outline-none focus:ring-2 focus:ring-accent-gold rounded"
                     aria-label="Close menu"
                   >
                     <X className="w-6 h-6" />
@@ -252,7 +258,7 @@ export function HeaderEnhanced() {
                           <div>
                             <button
                               onClick={() => setActiveSubmenu(activeSubmenu === item.name ? null : item.name)}
-                              className="flex items-center justify-between w-full px-4 py-3 text-lg font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+                              className="flex items-center justify-between w-full px-4 py-3 text-lg font-medium text-white hover:bg-tertiary-bg hover:text-accent-gold-hover rounded-lg transition-colors"
                             >
                               {item.name}
                               <ChevronDown 
@@ -274,7 +280,7 @@ export function HeaderEnhanced() {
                                     <Link
                                       key={subitem.href}
                                       href={subitem.href}
-                                      className="block px-4 py-2 text-gray-700 hover:text-accent-blue hover:bg-gray-50 rounded-lg transition-colors"
+                                      className="block px-4 py-2 text-gray-300 hover:text-accent-gold-hover hover:bg-tertiary-bg rounded-lg transition-colors"
                                     >
                                       {subitem.name}
                                     </Link>
@@ -288,8 +294,8 @@ export function HeaderEnhanced() {
                             href={item.href}
                             className={`block px-4 py-3 text-lg font-medium rounded-lg transition-colors ${
                               pathname === item.href
-                                ? 'bg-accent-blue/10 text-accent-blue'
-                                : 'text-gray-900 hover:bg-gray-50'
+                                ? 'bg-accent-gold/10 text-accent-gold-hover'
+                                : 'text-white hover:bg-tertiary-bg hover:text-accent-gold-hover'
                             }`}
                           >
                             {item.name}
@@ -301,10 +307,10 @@ export function HeaderEnhanced() {
                 </nav>
 
                 {/* CTA */}
-                <div className="p-6 border-t">
+                <div className="p-6 border-t border-accent-gold/20">
                   <Link
                     href="/contact"
-                    className="block w-full px-6 py-4 bg-accent-blue text-white text-center font-semibold rounded-lg hover:bg-accent-blue-hover transition-colors"
+                    className="block w-full px-6 py-4 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-primary-bg text-center font-semibold rounded-lg hover:from-accent-gold-hover hover:to-accent-gold-dark transition-all shadow-lg shadow-accent-gold/20"
                   >
                     Get Started
                   </Link>

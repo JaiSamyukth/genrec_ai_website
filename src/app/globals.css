@@ -123,31 +123,32 @@ section {
     scroll-behavior: smooth;
   }
 
-  /* Custom Scrollbar Styles */
+  /* Custom Scrollbar Styles - Luxury Gold on Midnight Black */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-gray-100;
+    background: var(--primary-bg);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #C9A66B;
+    background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-hover));
     border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: content-box;
+    border: 2px solid var(--primary-bg);
+    background-clip: padding-box;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #D4B478;
+    background: linear-gradient(180deg, var(--accent-gold-hover), var(--accent-gold-dark));
   }
 
-  /* Firefox Scrollbar with gold theme */
+  /* Firefox Scrollbar with luxury gold theme */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #C9A66B #0b0f1a;
+    scrollbar-color: var(--accent-gold) var(--primary-bg);
   }
 
   /* Optimized animations */
@@ -252,59 +253,62 @@ section {
   }
 
   :root {
-    /* Genrec AI Luxury Theme - Gold & Midnight Black */
-    --primary-bg: #0b0f1a;
-    --secondary-bg: #111827;
-    --accent-gold: #C9A66B;
-    --accent-gold-hover: #D4B478;
-    --accent-gold-dark: #B8955A;
-    --accent-gold-light: rgba(201, 166, 107, 0.1);
-    --accent-gold-glow: rgba(201, 166, 107, 0.3);
-    --text-primary: #F7F7F7;
-    --text-secondary: #9AA3B2;
+    /* Genrec AI Luxury Theme - Gold & Midnight Black (Comprehensive Documentation Spec) */
+    --primary-bg: #0b0f1a; /* Midnight black */
+    --secondary-bg: #111827; /* Slightly lighter black */
+    --tertiary-bg: #1f2937; /* Dark gray */
+    --accent-gold: #C9A66B; /* Primary metallic gold */
+    --accent-gold-hover: #D4B478; /* Lighter gold for hover */
+    --accent-gold-dark: #B8955A; /* Darker gold for active states */
+    --accent-gold-light: rgba(201, 166, 107, 0.1); /* Light gold backgrounds */
+    --accent-gold-glow: rgba(201, 166, 107, 0.3); /* Gold glow effects */
+    --text-primary: #F7F7F7; /* Crisp white */
+    --text-secondary: #9AA3B2; /* Muted gray */
     
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Radix UI/Shadcn compatibility (mapped to luxury theme) */
+    --background: 219 32% 6%; /* Midnight black */
+    --foreground: 0 0% 97%; /* Crisp white */
+    --card: 217 33% 10%; /* Slightly lighter black */
+    --card-foreground: 0 0% 97%;
+    --popover: 217 33% 10%;
+    --popover-foreground: 0 0% 97%;
+    --primary: 42 30% 62%; /* Gold */
+    --primary-foreground: 219 32% 6%; /* Dark on gold */
+    --secondary: 217 33% 10%;
+    --secondary-foreground: 0 0% 97%;
+    --muted: 220 18% 24%;
+    --muted-foreground: 215 15% 62%;
+    --accent: 42 30% 62%; /* Gold */
+    --accent-foreground: 219 32% 6%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 97%;
+    --border: 42 30% 62% / 0.1; /* Gold border with opacity */
+    --input: 220 18% 24%;
+    --ring: 42 30% 62%; /* Gold focus ring */
     --radius: 0.5rem;
   }
 
+  /* Dark mode maintains same luxury aesthetic */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 219 32% 6%;
+    --foreground: 0 0% 97%;
+    --card: 217 33% 10%;
+    --card-foreground: 0 0% 97%;
+    --popover: 217 33% 10%;
+    --popover-foreground: 0 0% 97%;
+    --primary: 42 30% 62%;
+    --primary-foreground: 219 32% 6%;
+    --secondary: 217 33% 10%;
+    --secondary-foreground: 0 0% 97%;
+    --muted: 220 18% 24%;
+    --muted-foreground: 215 15% 62%;
+    --accent: 42 30% 62%;
+    --accent-foreground: 219 32% 6%;
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 0 0% 97%;
+    --border: 42 30% 62% / 0.1%;
+    --input: 220 18% 24%;
+    --ring: 42 30% 62%;
   }
 }
 
@@ -316,11 +320,13 @@ section {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    background-color: var(--primary-bg);
   }
   
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-primary-bg text-light-text antialiased;
     overflow-x: hidden;
+    background-color: var(--primary-bg);
   }
   
   h1,
@@ -332,8 +338,10 @@ section {
     @apply font-serif tracking-tight;
   }
   
+  /* Luxury gold selection */
   ::selection {
-    @apply bg-accent-blue/10 text-accent-blue;
+    background: var(--accent-gold-light);
+    color: var(--accent-gold);
   }
 }
 
@@ -360,14 +368,16 @@ section {
     @apply bg-gray-500;
   }
   
-  /* Gradient text */
+  /* Gradient text - Luxury gold */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-metal to-yellow-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-gold to-accent-gold-hover;
   }
   
-  /* Glass morphism */
+  /* Glass morphism - Dark with gold accent */
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    background: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 166, 107, 0.1);
   }
 }
 
