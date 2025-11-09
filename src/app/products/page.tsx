@@ -2,70 +2,170 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, ChefHat, Brain, Shield, Zap, Award, Users } from 'lucide-react'
+import { ArrowRight, Brain, Utensils, BarChart3, Users, MessageSquare, FileText, DollarSign, Building2 } from 'lucide-react'
 import { theme, gradients } from '@/lib/theme'
 import { FAQ } from '@/components/FAQ'
 
 const products = [
   {
-    id: 'educational-website',
-    title: 'Educational Websites',
-    tagline: 'Engage students, grow enrollments',
-    description: 'Custom websites that turn visitors into enrolled students. Modern designs that showcase your institution excellence.',
+    id: 'lumina-iq',
+    title: 'Lumina IQ',
+    tagline: 'AI-Powered Learning Platform',
+    description: 'Transform any PDF into an intelligent learning experience. Interactive AI chat, quizzes, and adaptive learning paths.',
     icon: Brain,
-    href: '/products/educational-website',
+    href: '/products/lumina-iq',
     image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800',
     features: [
-      'Mobile-first design optimized for student engagement',
-      'Integrated admission forms and enrollment tracking',
-      'SEO-optimized to rank higher and attract more students',
-      'Analytics dashboard to track visitor behavior and conversions'
+      'Smart PDF processing with RAG & NLP',
+      'Interactive AI chat for contextual learning',
+      'Auto-generated quizzes and assessments',
+      'Personal library with intelligent search'
     ],
     stats: {
-      value: '340%',
-      label: 'Average increase in online inquiries'
+      value: '40%',
+      label: 'Improvement in test scores'
     },
-    gradient: 'from-blue-600 to-purple-600'
+    gradient: 'from-[#C9A66B] to-[#D4B478]'
   },
   {
-    id: 'construction-website',
-    title: 'Construction Websites',
-    tagline: 'Build trust, win more projects',
-    description: 'Professional websites that showcase your portfolio and expertise. Turn site visitors into signed contracts.',
-    icon: Shield,
-    href: '/products/construction-website',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=800',
-    features: [
-      'Interactive project galleries with before/after showcases',
-      'Client testimonials and case studies that build credibility',
-      'Lead capture forms optimized for contractor inquiries',
-      'Local SEO to dominate your geographic market'
-    ],
-    stats: {
-      value: '5.2x',
-      label: 'More qualified leads per month'
-    },
-    gradient: 'from-slate-600 to-zinc-700'
-  },
-  {
-    id: 'restaurant-website',
-    title: 'Restaurant Websites',
-    tagline: 'Drive reservations, boost revenue',
-    description: 'Mouthwatering websites that make reservations effortless. Turn hungry browsers into dining guests.',
-    icon: ChefHat,
-    href: '/products/restaurant-website',
+    id: 'tabble',
+    title: 'Tabble',
+    tagline: 'Premium Dining Solution',
+    description: 'Elegant tablet ordering system for luxury hotels. Real-time kitchen coordination, guest preferences, and revenue analytics.',
+    icon: Utensils,
+    href: '/products/tabble',
     image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=800',
     features: [
-      'Integrated reservation systems with real-time availability',
-      'Stunning food photography galleries that drive appetite',
-      'Online menu with dietary filters and allergy information',
-      'Social media integration to amplify your reach'
+      'Premium tablet interface for guests',
+      'Real-time staff dashboard',
+      'Guest preferences & dietary tracking',
+      'Revenue analytics & insights'
     ],
     stats: {
-      value: '68%',
-      label: 'Increase in online reservations'
+      value: '30%',
+      label: 'Increase in room service orders'
     },
-    gradient: 'from-amber-600 to-orange-600'
+    gradient: 'from-[#D4B478] to-[#E0C084]'
+  },
+  {
+    id: 'data-agent',
+    title: 'DataScience Agent',
+    tagline: 'Analytical Automation',
+    description: 'Intelligent data analysis, automated reporting, and predictive insights powered by AI. Transform raw data into actionable intelligence.',
+    icon: BarChart3,
+    href: '/products/data-agent',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Automated data analysis & reporting',
+      'Predictive analytics with ML models',
+      'Custom dashboard creation',
+      'Data visualization & storytelling'
+    ],
+    stats: {
+      value: '10x',
+      label: 'Faster data processing'
+    },
+    gradient: 'from-[#B8955A] to-[#C9A66B]'
+  },
+  {
+    id: 'hrms',
+    title: 'HRMS',
+    tagline: 'Employee & Attendance Manager',
+    description: 'Complete HR management system. Track attendance, manage leave, monitor performance, and streamline payroll processing.',
+    icon: Users,
+    href: '/products/hrms',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Biometric attendance integration',
+      'Leave management system',
+      'Performance tracking & reviews',
+      'Automated payroll processing'
+    ],
+    stats: {
+      value: '60%',
+      label: 'Reduction in HR admin time'
+    },
+    gradient: 'from-[#C9A66B] to-[#B8955A]'
+  },
+  {
+    id: 'feedback-system',
+    title: 'Anonymous Feedback',
+    tagline: 'Staff-Student Feedback Platform',
+    description: 'Secure, anonymous feedback collection for educational institutions. Real-time sentiment analysis and actionable insights.',
+    icon: MessageSquare,
+    href: '/products/feedback-system',
+    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Anonymous submission system',
+      'Real-time sentiment analysis',
+      'Categorization & prioritization',
+      'Dashboard for actionable insights'
+    ],
+    stats: {
+      value: '85%',
+      label: 'Student participation rate'
+    },
+    gradient: 'from-[#D4B478] to-[#C9A66B]'
+  },
+  {
+    id: 'billing',
+    title: 'Billing System',
+    tagline: 'Internal Billing Module',
+    description: 'Comprehensive billing and invoicing system. Client management, recurring payments, expense tracking, and financial reporting.',
+    icon: DollarSign,
+    href: '/products/billing',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Automated invoice generation',
+      'Recurring payment setup',
+      'Expense tracking & categorization',
+      'Financial reports & tax summaries'
+    ],
+    stats: {
+      value: '50%',
+      label: 'Faster invoice processing'
+    },
+    gradient: 'from-[#E0C084] to-[#D4B478]'
+  },
+  {
+    id: 'crm',
+    title: 'CRM Application',
+    tagline: 'Business Management System',
+    description: 'Full-featured CRM for client management, sales pipeline, task automation, and team collaboration.',
+    icon: Building2,
+    href: '/products/crm',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Contact & lead management',
+      'Sales pipeline visualization',
+      'Task automation & reminders',
+      'Team collaboration tools'
+    ],
+    stats: {
+      value: '3x',
+      label: 'Increase in sales conversions'
+    },
+    gradient: 'from-[#C9A66B] to-[#D4B478]'
+  },
+  {
+    id: 'invoice-generator',
+    title: 'Invoice Generator',
+    tagline: 'Lightweight Invoice Automation',
+    description: 'Simple, fast invoice generation tool. Professional templates, multi-currency support, and PDF export.',
+    icon: FileText,
+    href: '/products/invoice-generator',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800',
+    features: [
+      'Professional invoice templates',
+      'Multi-currency support',
+      'Instant PDF generation',
+      'Client & product database'
+    ],
+    stats: {
+      value: '2min',
+      label: 'Average invoice creation time'
+    },
+    gradient: 'from-[#D4B478] to-[#E0C084]'
   }
 ]
 
@@ -117,22 +217,22 @@ export default function ProductsPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6" style={{ color: theme.colors.text.primary }}>
-              Websites That Grow Your Business
+              Software Built for Real Businesses
             </h1>
             <p className="text-xl md:text-2xl mb-4" style={{ color: theme.colors.text.secondary }}>
-              Three specialized solutions. One goal: more customers, more revenue.
+              Eight production-ready solutions. One standard: engineering excellence.
             </p>
             <p className="text-xl md:text-2xl" style={{ color: theme.colors.accent.gold }}>
-              Transform your online presence into a customer-generating machine.
+              From AI learning platforms to business management systems—built by engineers, not agencies.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className={theme.spacing.section}>
-        <div className={theme.spacing.container}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <section className="py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}

@@ -1,61 +1,262 @@
-import { theme } from '@/lib/theme'
+'use client'
 
-export const metadata = {
-  title: 'Tabble — Luxury Hospitality Table Management',
-  description: 'Premium table management app for high-end hotels and restaurants. Luxury UI, seamless operations.'
-}
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { 
+  Tablet, 
+  Users, 
+  TrendingUp, 
+  Star, 
+  Clock, 
+  BarChart3,
+  Smartphone,
+  Utensils,
+  Sparkles
+} from 'lucide-react'
+import Link from 'next/link'
+
+const features = [
+  {
+    icon: Tablet,
+    title: 'Premium Tablet Interface',
+    description: 'Elegant guest-facing ordering system designed for luxury hotels and fine dining.',
+  },
+  {
+    icon: Users,
+    title: 'Staff Dashboard',
+    description: 'Real-time order management, kitchen coordination, and service optimization.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Revenue Analytics',
+    description: 'Deep insights into ordering patterns, popular items, and revenue optimization.',
+  },
+  {
+    icon: Star,
+    title: 'Guest Preferences',
+    description: 'Remember dietary restrictions, favorites, and personalize every experience.',
+  },
+  {
+    icon: Clock,
+    title: 'Speed & Efficiency',
+    description: 'Reduce wait times, eliminate order errors, and streamline kitchen operations.',
+  },
+  {
+    icon: BarChart3,
+    title: 'Smart Recommendations',
+    description: 'AI-powered menu suggestions that increase order value and guest satisfaction.',
+  },
+]
+
+const processSteps = [
+  {
+    icon: Smartphone,
+    number: '01',
+    title: 'Browse',
+    description: 'Guests explore your menu with stunning photography, detailed descriptions, and allergen information on premium tablets.',
+  },
+  {
+    icon: Utensils,
+    number: '02',
+    title: 'Order',
+    description: 'One-tap ordering syncs instantly to kitchen displays. Custom requests, dietary preferences, and special instructions captured perfectly.',
+  },
+  {
+    icon: Sparkles,
+    number: '03',
+    title: 'Delight',
+    description: 'Staff receive real-time notifications, kitchen workflows optimize automatically, and guests enjoy faster, more accurate service.',
+  },
+]
 
 export default function TabblePage() {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
+  const [processRef, processInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  })
+
   return (
-    <div style={{ backgroundColor: theme.colors.background.primary }}>
-      <div className={theme.spacing.container}>
-        <div className={theme.spacing.maxWidth}>
-          <header className="py-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold" style={{ color: theme.colors.text.primary }}>Tabble — Luxury Hospitality Table Management</h1>
-            <p className="mt-4 text-lg" style={{ color: theme.colors.text.secondary }}>Enhances dining experiences for hotels and restaurants with a luxury, privacy-first approach.</p>
-            <div className="mt-8">
-              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=2000" alt="luxury restaurant interior" className="w-full h-64 object-cover rounded-lg mx-auto" loading="lazy" />
-            </div>
-          </header>
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-gray-50 py-24 sm:py-32">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]" />
 
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4" style={{ color: theme.colors.text.primary }}>Purpose</h2>
-              <p style={{ color: theme.colors.text.secondary }}>Enhances dining experiences for hotels and restaurants. Integrates table management, customer interactions, and staff operations into a single seamless platform with an emphasis on luxury UX and privacy.</p>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mb-6 inline-block"
+            >
+              <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
+                HOSPITALITY TECHNOLOGY
+              </span>
+            </motion.div>
 
-              <h3 className="text-xl font-semibold mt-6 mb-2" style={{ color: theme.colors.text.primary }}>Core Features</h3>
-              <ul className="list-disc pl-5" style={{ color: theme.colors.text.secondary }}>
-                <li><strong>Customer-Facing (Tablet UI):</strong> Menu browsing, entertainment features, and a ‘Complete Dining’ flow that shows the total bill at checkout.</li>
-                <li><strong>Staff-Facing:</strong> Admin dashboard for table management, notifications, and billing operations; Chef interface for kitchen workflow.</li>
-                <li><strong>ERP Integration:</strong> Smooth interaction between front-of-house and back-of-house operations.</li>
-                <li><strong>Design Philosophy:</strong> Luxury, dark-themed UI with fast, smooth, and intuitive interactions.</li>
-                <li><strong>Deployment:</strong> Works on tablets, PCs, and touch TVs. Scales across multiple hotel locations.</li>
-              </ul>
-            </div>
+            <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+              Tabble
+            </h1>
+            
+            <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
+              Premium dining tablet & staff interfaces for luxury hotels.
+            </p>
 
-            <div>
-              <h3 className="text-xl font-semibold mb-2" style={{ color: theme.colors.text.primary }}>Impact / Results</h3>
-              <ul className="list-disc pl-5" style={{ color: theme.colors.text.secondary }}>
-                <li>Increased guest satisfaction scores by 35% in the first quarter.</li>
-                <li>Streamlined staff operations and improved order accuracy.</li>
-                <li>Testimonials emphasize enhanced dining experience and intuitive usability.</li>
-              </ul>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
+              Tabble transforms in-room and restaurant dining into seamless, elegant experiences. 
+              Our guest-facing tablets and staff management system eliminate ordering friction, 
+              reduce errors, and increase revenue. It's not just digital menus. It's hospitality redefined.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-              <div className="mt-8 p-6 rounded-lg border" style={{ backgroundColor: theme.colors.background.secondary }}>
-                <h4 className="text-lg font-semibold" style={{ color: theme.colors.text.primary }}>Experience Tabble</h4>
-                <p className="text-sm mb-4" style={{ color: theme.colors.text.secondary }}>Visit Tabble to learn more and request a demo or partnership.</p>
-                <div className="mb-4">
-                  <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&q=80&w=1200" alt="dining table setup" className="w-full h-40 object-cover rounded-md" loading="lazy" />
+      {/* Features Grid */}
+      <section className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                className="group relative bg-gray-50 p-8 transition-all duration-300 hover:bg-white hover:shadow-lg"
+              >
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border border-gray-200 transition-colors duration-300 group-hover:border-gray-900">
+                  <feature.icon className="h-6 w-6 text-gray-900" />
                 </div>
-                <a href="https://www.tabble.in" target="_blank" rel="noreferrer" className="inline-flex items-center px-5 py-3 rounded-lg font-semibold" style={{ background: `linear-gradient(135deg, ${theme.colors.accent.gold} 0%, ${theme.colors.accent.goldHover} 100%)`, color: theme.colors.text.dark }}>
-                  Visit Tabble
-                </a>
+
+                <h3 className="mb-2 text-lg font-medium text-gray-900">
+                  {feature.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Product Preview */}
+      <section className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={inView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.8 }}
+          >
+            <div className="mx-auto aspect-video max-w-4xl border border-gray-200 bg-gradient-to-br from-gray-100 to-white p-8">
+              <div className="flex h-full items-center justify-center">
+                <p className="text-center text-sm font-medium tracking-wider text-gray-400">
+                  [ PRODUCT INTERFACE PREVIEW ]
+                </p>
               </div>
             </div>
-          </section>
-
+          </motion.div>
         </div>
-      </div>
+      </section>
+
+      {/* 3-Step Process */}
+      <section className="bg-gray-50 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            ref={processRef}
+            initial={{ opacity: 0, y: 30 }}
+            animate={processInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl">
+              How It <span className="font-bold">Works</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
+              Simple. Transparent. Obsessively executed.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 20 }}
+                animate={processInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
+                className="relative bg-white p-8 border border-gray-200 group hover:border-gray-900 transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-gray-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                
+                <div className="mb-6">
+                  <span className="text-4xl font-bold text-gray-900">{step.number}</span>
+                </div>
+
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center border border-gray-200 group-hover:border-gray-900 transition-colors">
+                  <step.icon className="h-6 w-6 text-gray-900" />
+                </div>
+
+                <h3 className="mb-3 text-2xl font-bold text-gray-900">
+                  {step.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gray-900 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="text-center"
+          >
+            <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
+              Ready to Elevate Your Guest Experience?
+            </h2>
+            <p className="mb-8 text-lg text-gray-400">
+              Schedule a demo and see how Tabble transforms hospitality operations.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+              <Link
+                href="/contact"
+                className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
+              >
+                <span className="relative z-10 text-sm font-medium tracking-wider">
+                  REQUEST DEMO
+                </span>
+              </Link>
+
+              <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
+                <span className="text-sm font-medium tracking-wider">
+                  VIEW PRICING
+                </span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   )
 }

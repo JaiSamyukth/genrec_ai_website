@@ -123,7 +123,12 @@ section {
     scroll-behavior: smooth;
   }
 
-  /* Custom Scrollbar Styles */
+  /* STANDARDIZED TRANSITIONS - 0.24s fast, 0.3s default, 0.5s entrance */
+  * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Custom Scrollbar Styles - Gold Theme */
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -144,25 +149,58 @@ section {
     background: #D4B478;
   }
 
-  /* Firefox Scrollbar with gold theme */
+  /* Firefox Scrollbar - Gold Theme */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #C9A66B #0b0f1a;
+    scrollbar-color: #C9A66B #F3F4F6;
   }
 
-  /* Optimized animations */
-  @keyframes blob {
-    0%, 100% {
-      transform: translate(0px, 0px) scale(1);
+  /* STANDARDIZED BUTTON HOVER - All buttons follow same pattern */
+  button, a[role="button"] {
+    @apply transition-all duration-300;
+  }
+
+  button:hover, a[role="button"]:hover {
+    @apply shadow-lg;
+  }
+
+  /* STANDARDIZED KEYFRAME ANIMATIONS */
+  
+  /* Fade In - 0.5s entrance */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
-    33% {
-      transform: translate(30px, -50px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 20px) scale(0.9);
+    to {
+      opacity: 1;
     }
   }
 
+  /* Slide Up - 0.5s entrance */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scale In - 0.3s default */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Float - Continuous (3s) */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
@@ -172,29 +210,23 @@ section {
     }
   }
 
-  @keyframes float-up {
-    0% {
-      transform: translateY(100vh);
-      opacity: 0;
-    }
-    10% {
-      opacity: 1;
-    }
-    90% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-100vh);
-      opacity: 0;
-    }
-  }
-
+  /* Gradient Shift - Continuous */
   @keyframes gradient-x {
     0%, 100% {
       background-position: 0% 50%;
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+
+  /* Shimmer - Loading states */
+  @keyframes shimmer {
+    from {
+      background-position: -468px 0;
+    }
+    to {
+      background-position: 468px 0;
     }
   }
 

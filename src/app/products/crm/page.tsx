@@ -3,73 +3,73 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
-  FileText, 
-  MessageSquare, 
-  HelpCircle, 
-  GraduationCap, 
-  BookOpen, 
-  Library,
-  Upload,
-  Brain,
-  Trophy
+  Building2, 
+  Users, 
+  TrendingUp, 
+  Calendar, 
+  Mail, 
+  Bell,
+  UserPlus,
+  Target,
+  Award
 } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
   {
-    icon: FileText,
-    title: 'Smart PDF Processing',
-    description: 'AI reads, understands, and extracts insights from any document.',
+    icon: Users,
+    title: 'Contact Management',
+    description: 'Centralized database for all clients, leads, and contacts with complete interaction history.',
   },
   {
-    icon: MessageSquare,
-    title: 'Interactive AI Chat',
-    description: 'Ask, learn, and explore through natural conversation.',
+    icon: TrendingUp,
+    title: 'Sales Pipeline',
+    description: 'Visual pipeline with drag-and-drop stages, deal tracking, and revenue forecasting.',
   },
   {
-    icon: HelpCircle,
-    title: 'Question Generation',
-    description: 'Auto-generate questions to test understanding.',
+    icon: Bell,
+    title: 'Task Automation',
+    description: 'Automated follow-ups, reminders, and workflow triggers based on customer actions.',
   },
   {
-    icon: GraduationCap,
-    title: 'Quiz Mode',
-    description: 'Reinforce knowledge through adaptive quizzes.',
+    icon: Calendar,
+    title: 'Activity Tracking',
+    description: 'Log calls, meetings, emails, and notes automatically for complete customer context.',
   },
   {
-    icon: BookOpen,
-    title: 'Smart Notes',
-    description: 'Seamlessly integrated AI-powered notes.',
+    icon: Mail,
+    title: 'Email Integration',
+    description: 'Sync emails, track opens and clicks, and manage campaigns directly from CRM.',
   },
   {
-    icon: Library,
-    title: 'Personal Library',
-    description: 'Organize all your materials with intelligent search.',
+    icon: Award,
+    title: 'Team Collaboration',
+    description: 'Share notes, assign tasks, and collaborate on deals with real-time updates.',
   },
 ]
 
 const processSteps = [
   {
-    icon: Upload,
+    icon: UserPlus,
     number: '01',
-    title: 'Upload',
-    description: 'Drag and drop any PDF. Our system processes it instantly using advanced RAG and NLP models.',
+    title: 'Capture',
+    description: 'Add leads from web forms, email, or manual entry. Automatically enrich profiles with social data and company information.',
   },
   {
-    icon: Brain,
+    icon: Target,
     number: '02',
-    title: 'Learn',
-    description: 'Ask anything — get deep, contextual answers with examples, analogies, and summaries.',
+    title: 'Nurture',
+    description: 'Move leads through your pipeline stages. Automate follow-ups, schedule meetings, and track every interaction in one place.',
   },
   {
-    icon: Trophy,
+    icon: Award,
     number: '03',
-    title: 'Master',
-    description: 'Generate quizzes, track your learning streak, and convert theory into clarity.',
+    title: 'Close',
+    description: 'Convert leads to customers, track deal values, forecast revenue, and analyze win rates to optimize your sales process.',
   },
 ]
 
-export default function LuminaPage() {
+export default function CRMPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -101,22 +101,21 @@ export default function LuminaPage() {
               className="mb-6 inline-block"
             >
               <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
-                OUR FLAGSHIP PRODUCT
+                BUSINESS MANAGEMENT SYSTEM
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              LuminaIQ
+              CRM Application
             </h1>
             
             <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
-              Transform any PDF into a living, intelligent learning experience.
+              Manage clients, close deals, and grow your business.
             </p>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-              LuminaIQ turns static documents into interactive conversations. Upload your notes, 
-              research papers, or books — our AI processes, explains, and quizzes you on them. 
-              It's not just study automation. It's cognitive augmentation.
+              Complete CRM solution for managing your entire customer lifecycle. From lead capture to deal 
+              closure, track every interaction, automate follow-ups, and collaborate with your team seamlessly.
             </p>
           </motion.div>
         </div>
@@ -233,10 +232,10 @@ export default function LuminaPage() {
             className="text-center"
           >
             <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Learning?
+              Ready to 3x Your Sales Conversions?
             </h2>
             <p className="mb-8 text-lg text-gray-400">
-              Join the waitlist and be among the first to experience the future of learning.
+              See how our CRM can help you close more deals and grow your business faster.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <Link
@@ -244,13 +243,13 @@ export default function LuminaPage() {
                 className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
               >
                 <span className="relative z-10 text-sm font-medium tracking-wider">
-                  JOIN WAITLIST
+                  REQUEST DEMO
                 </span>
               </Link>
 
               <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
                 <span className="text-sm font-medium tracking-wider">
-                  WATCH DEMO
+                  VIEW PRICING
                 </span>
               </button>
             </div>

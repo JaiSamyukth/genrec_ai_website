@@ -101,7 +101,7 @@ export function WorkShowcase() {
           ref={containerRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
-          className="relative w-full h-[600px] flex items-center justify-center perspective-[1000px]"
+          className="relative w-full flex items-center justify-center px-6 lg:px-12 gap-8"
           style={{ perspective: '1000px' }}
         >
           {/* Main Image Display with 3D Rotation */}
@@ -111,7 +111,7 @@ export function WorkShowcase() {
               rotateY,
               transformStyle: 'preserve-3d'
             }}
-            className="relative w-full max-w-5xl h-full px-6 lg:px-12"
+            className="relative w-full max-w-4xl h-[600px]"
           >
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
               {/* Image Carousel */}
@@ -163,59 +163,60 @@ export function WorkShowcase() {
             </div>
           </motion.div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? showcaseImages.length - 1 : prev - 1))}
-            className="absolute left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
-            aria-label="Previous image"
-          >
-            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button
-            onClick={() => setCurrentIndex((prev) => (prev === showcaseImages.length - 1 ? 0 : prev + 1))}
-            className="absolute right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
-            aria-label="Next image"
-          >
-            <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+          {/* Right Side Vertical Controls */}
+          <div className="hidden lg:flex flex-col items-center gap-6">
+            {/* Navigation Arrows - Vertical */}
+            <button
+              onClick={() => setCurrentIndex((prev) => (prev === 0 ? showcaseImages.length - 1 : prev - 1))}
+              className="bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
+              aria-label="Previous image"
+            >
+              <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
 
-        {/* Thumbnail Navigation */}
-        <div className="mt-12 px-6 lg:px-12">
-          <div className="flex justify-center gap-4 flex-wrap max-w-4xl mx-auto">
-            {showcaseImages.map((image, index) => (
-              <motion.button
-                key={image.id}
-                onClick={() => setCurrentIndex(index)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`relative w-24 h-24 md:w-32 md:h-32 rounded-xl overflow-hidden transition-all ${
-                  index === currentIndex
-                    ? 'ring-4 ring-gray-900 shadow-xl'
-                    : 'ring-2 ring-gray-200 opacity-60 hover:opacity-100'
-                }`}
-              >
-                <Image
-                  src={image.url}
-                  alt={image.alt}
-                  fill
-                  className="object-cover"
-                />
-                {index === currentIndex && (
-                  <div className="absolute inset-0 bg-gray-900/10" />
-                )}
-              </motion.button>
-            ))}
+            {/* Thumbnail Navigation - Vertical */}
+            <div className="flex flex-col gap-3">
+              {showcaseImages.map((image, index) => (
+                <motion.button
+                  key={image.id}
+                  onClick={() => setCurrentIndex(index)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`relative w-20 h-20 rounded-xl overflow-hidden transition-all ${
+                    index === currentIndex
+                      ? 'ring-4 ring-gray-900 shadow-xl'
+                      : 'ring-2 ring-gray-200 opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <Image
+                    src={image.url}
+                    alt={image.alt}
+                    fill
+                    className="object-cover"
+                  />
+                  {index === currentIndex && (
+                    <div className="absolute inset-0 bg-gray-900/10" />
+                  )}
+                </motion.button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setCurrentIndex((prev) => (prev === showcaseImages.length - 1 ? 0 : prev + 1))}
+              className="bg-white/90 hover:bg-white backdrop-blur-md rounded-full p-4 shadow-xl transition-all hover:scale-110"
+              aria-label="Next image"
+            >
+              <svg className="w-6 h-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
           </div>
         </div>
 
-        {/* Progress Indicators */}
-        <div className="mt-8 flex justify-center gap-2">
+        {/* Mobile Progress Indicators */}
+        <div className="mt-8 flex lg:hidden justify-center gap-2">
           {showcaseImages.map((_, index) => (
             <button
               key={index}

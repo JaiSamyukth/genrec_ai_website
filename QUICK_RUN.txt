@@ -1,0 +1,36 @@
+===========================================
+HOW TO RUN THE GENREC AI WEBSITE
+===========================================
+
+STEP 1: Open Command Prompt or PowerShell in this folder
+----------------------------------------
+Press Shift + Right Click in the folder and select:
+"Open PowerShell window here" or "Open in Terminal"
+
+STEP 2: Install Dependencies (First Time Only)
+----------------------------------------
+npm install
+
+STEP 3: Run the Development Server
+----------------------------------------
+npm run dev
+
+STEP 4: Open in Browser
+----------------------------------------
+Visit: http://localhost:3000
+
+===========================================
+IMPORTANT PAGES
+===========================================
+- Homepage: http://localhost:3000
+- LuminaIQ Page: http://localhost:3000/products/lumina-iq
+- Contact: http://localhost:3000/contact
+
+===========================================
+QUICK FIXES
+===========================================
+If port 3000 is busy: The server will auto-use port 3001, 3002, etc.
+If errors occur: Delete .next folder and run "npm run dev" again
+If modules missing: Run "npm install" again
+
+===========================================

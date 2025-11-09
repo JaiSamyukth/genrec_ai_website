@@ -1,25 +1,27 @@
 import { HeroParallax } from '@/components/HeroParallax'
-import { WorkShowcase } from '@/components/WorkShowcase'
 import { DivisionsOverview } from '@/components/DivisionsOverview'
+import { WorkShowcase } from '@/components/WorkShowcase'
 import { WhoWeAre } from '@/components/WhoWeAre'
 import { OurEthos } from '@/components/OurEthos'
 import { WorkWithUs } from '@/components/WorkWithUs'
+import { FooterRedesign } from '@/components/FooterRedesign'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Genrec AI - Built by Precision. Driven by Purpose.',
-  description: 'We build intelligent systems that work where others fail — software designed for performance, not pretense.'
+  description: 'From AI systems to design, we build intelligent ecosystems for ambitious brands — software, creative, and data solutions engineered with founder-level precision.'
 }
 
 export default function HomePage() {
   return (
     <div className="flex flex-col bg-white">
       <HeroParallax />
-      <WorkShowcase />
       <DivisionsOverview />
+      <WorkShowcase />
       <WhoWeAre />
       <OurEthos />
       <WorkWithUs />
+      <FooterRedesign />
     </div>
   )
 }

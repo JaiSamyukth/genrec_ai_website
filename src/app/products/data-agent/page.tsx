@@ -3,48 +3,48 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
-  FileText, 
-  MessageSquare, 
-  HelpCircle, 
-  GraduationCap, 
-  BookOpen, 
-  Library,
+  BarChart3, 
+  TrendingUp, 
+  Brain, 
+  Database, 
+  LineChart, 
+  PieChart,
   Upload,
-  Brain,
-  Trophy
+  Zap,
+  Target
 } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
   {
-    icon: FileText,
-    title: 'Smart PDF Processing',
-    description: 'AI reads, understands, and extracts insights from any document.',
+    icon: Database,
+    title: 'Automated Data Analysis',
+    description: 'AI-powered data processing and analysis that handles complex datasets automatically.',
   },
   {
-    icon: MessageSquare,
-    title: 'Interactive AI Chat',
-    description: 'Ask, learn, and explore through natural conversation.',
+    icon: Brain,
+    title: 'Predictive Analytics',
+    description: 'Machine learning models that forecast trends and identify patterns in your data.',
   },
   {
-    icon: HelpCircle,
-    title: 'Question Generation',
-    description: 'Auto-generate questions to test understanding.',
+    icon: LineChart,
+    title: 'Custom Dashboards',
+    description: 'Beautiful, interactive dashboards tailored to your specific business metrics.',
   },
   {
-    icon: GraduationCap,
-    title: 'Quiz Mode',
-    description: 'Reinforce knowledge through adaptive quizzes.',
+    icon: TrendingUp,
+    title: 'Real-Time Insights',
+    description: 'Live data monitoring and instant alerts when critical thresholds are reached.',
   },
   {
-    icon: BookOpen,
-    title: 'Smart Notes',
-    description: 'Seamlessly integrated AI-powered notes.',
+    icon: PieChart,
+    title: 'Data Visualization',
+    description: 'Transform complex data into clear, actionable visual stories.',
   },
   {
-    icon: Library,
-    title: 'Personal Library',
-    description: 'Organize all your materials with intelligent search.',
+    icon: BarChart3,
+    title: 'Automated Reporting',
+    description: 'Schedule and automate report generation with customizable templates.',
   },
 ]
 
@@ -52,24 +52,24 @@ const processSteps = [
   {
     icon: Upload,
     number: '01',
-    title: 'Upload',
-    description: 'Drag and drop any PDF. Our system processes it instantly using advanced RAG and NLP models.',
+    title: 'Connect',
+    description: 'Integrate your data sources—databases, spreadsheets, APIs, or cloud storage. Our agent securely connects to your existing infrastructure.',
   },
   {
-    icon: Brain,
+    icon: Zap,
     number: '02',
-    title: 'Learn',
-    description: 'Ask anything — get deep, contextual answers with examples, analogies, and summaries.',
+    title: 'Analyze',
+    description: 'AI algorithms process your data, identify patterns, detect anomalies, and generate predictive models automatically.',
   },
   {
-    icon: Trophy,
+    icon: Target,
     number: '03',
-    title: 'Master',
-    description: 'Generate quizzes, track your learning streak, and convert theory into clarity.',
+    title: 'Act',
+    description: 'Receive actionable insights through custom dashboards, automated reports, and real-time alerts that drive informed decisions.',
   },
 ]
 
-export default function LuminaPage() {
+export default function DataAgentPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -101,22 +101,21 @@ export default function LuminaPage() {
               className="mb-6 inline-block"
             >
               <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
-                OUR FLAGSHIP PRODUCT
+                ANALYTICAL AUTOMATION
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              LuminaIQ
+              DataScience Agent
             </h1>
             
             <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
-              Transform any PDF into a living, intelligent learning experience.
+              Turn raw data into intelligent, actionable insights.
             </p>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-              LuminaIQ turns static documents into interactive conversations. Upload your notes, 
-              research papers, or books — our AI processes, explains, and quizzes you on them. 
-              It's not just study automation. It's cognitive augmentation.
+              Our AI-powered analytics agent processes, analyzes, and visualizes your data automatically. 
+              From predictive modeling to automated reporting, transform your data operations into a strategic advantage.
             </p>
           </motion.div>
         </div>
@@ -233,10 +232,10 @@ export default function LuminaPage() {
             className="text-center"
           >
             <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Learning?
+              Ready to Transform Your Data Operations?
             </h2>
             <p className="mb-8 text-lg text-gray-400">
-              Join the waitlist and be among the first to experience the future of learning.
+              See how DataScience Agent can turn your data into strategic intelligence.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <Link
@@ -244,13 +243,13 @@ export default function LuminaPage() {
                 className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
               >
                 <span className="relative z-10 text-sm font-medium tracking-wider">
-                  JOIN WAITLIST
+                  REQUEST DEMO
                 </span>
               </Link>
 
               <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
                 <span className="text-sm font-medium tracking-wider">
-                  WATCH DEMO
+                  VIEW PRICING
                 </span>
               </button>
             </div>

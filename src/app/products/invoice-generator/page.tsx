@@ -4,72 +4,72 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
   FileText, 
-  MessageSquare, 
-  HelpCircle, 
-  GraduationCap, 
-  BookOpen, 
-  Library,
-  Upload,
-  Brain,
-  Trophy
+  Download, 
+  Globe, 
+  Palette, 
+  Database, 
+  Zap,
+  Edit,
+  Send,
+  CheckCircle
 } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
   {
+    icon: Palette,
+    title: 'Professional Templates',
+    description: 'Beautiful, customizable invoice templates that match your brand identity.',
+  },
+  {
+    icon: Globe,
+    title: 'Multi-Currency Support',
+    description: 'Invoice clients worldwide with automatic currency conversion and formatting.',
+  },
+  {
+    icon: Download,
+    title: 'Instant PDF Export',
+    description: 'Generate print-ready PDFs with one click, optimized for email and printing.',
+  },
+  {
+    icon: Database,
+    title: 'Client Database',
+    description: 'Save client details and frequently used items for faster invoice creation.',
+  },
+  {
+    icon: Zap,
+    title: 'Lightning Fast',
+    description: 'Create professional invoices in under 2 minutes with our streamlined interface.',
+  },
+  {
     icon: FileText,
-    title: 'Smart PDF Processing',
-    description: 'AI reads, understands, and extracts insights from any document.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Interactive AI Chat',
-    description: 'Ask, learn, and explore through natural conversation.',
-  },
-  {
-    icon: HelpCircle,
-    title: 'Question Generation',
-    description: 'Auto-generate questions to test understanding.',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Quiz Mode',
-    description: 'Reinforce knowledge through adaptive quizzes.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Smart Notes',
-    description: 'Seamlessly integrated AI-powered notes.',
-  },
-  {
-    icon: Library,
-    title: 'Personal Library',
-    description: 'Organize all your materials with intelligent search.',
+    title: 'Invoice Management',
+    description: 'Track all invoices, payment status, and client history in one dashboard.',
   },
 ]
 
 const processSteps = [
   {
-    icon: Upload,
+    icon: Edit,
     number: '01',
-    title: 'Upload',
-    description: 'Drag and drop any PDF. Our system processes it instantly using advanced RAG and NLP models.',
+    title: 'Create',
+    description: 'Select a template, add your business details, and input client information. Add line items, quantities, and pricing.',
   },
   {
-    icon: Brain,
+    icon: Send,
     number: '02',
-    title: 'Learn',
-    description: 'Ask anything — get deep, contextual answers with examples, analogies, and summaries.',
+    title: 'Customize',
+    description: 'Choose currency, add taxes, apply discounts, include payment terms, and add personalized notes or terms and conditions.',
   },
   {
-    icon: Trophy,
+    icon: CheckCircle,
     number: '03',
-    title: 'Master',
-    description: 'Generate quizzes, track your learning streak, and convert theory into clarity.',
+    title: 'Deliver',
+    description: 'Generate PDF instantly, download or send via email directly. Track invoice status and receive payment confirmation.',
   },
 ]
 
-export default function LuminaPage() {
+export default function InvoiceGeneratorPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -101,22 +101,21 @@ export default function LuminaPage() {
               className="mb-6 inline-block"
             >
               <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
-                OUR FLAGSHIP PRODUCT
+                LIGHTWEIGHT INVOICE AUTOMATION
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              LuminaIQ
+              Invoice Generator
             </h1>
             
             <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
-              Transform any PDF into a living, intelligent learning experience.
+              Professional invoices in under 2 minutes.
             </p>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-              LuminaIQ turns static documents into interactive conversations. Upload your notes, 
-              research papers, or books — our AI processes, explains, and quizzes you on them. 
-              It's not just study automation. It's cognitive augmentation.
+              Simple, fast, and beautiful invoice generation. Choose from professional templates, 
+              support multiple currencies, and export to PDF instantly. No complexity, no subscriptions—just invoices.
             </p>
           </motion.div>
         </div>
@@ -233,10 +232,10 @@ export default function LuminaPage() {
             className="text-center"
           >
             <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Learning?
+              Ready to Create Professional Invoices?
             </h2>
             <p className="mb-8 text-lg text-gray-400">
-              Join the waitlist and be among the first to experience the future of learning.
+              Start generating beautiful invoices in under 2 minutes. No learning curve.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <Link
@@ -244,13 +243,13 @@ export default function LuminaPage() {
                 className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
               >
                 <span className="relative z-10 text-sm font-medium tracking-wider">
-                  JOIN WAITLIST
+                  TRY IT FREE
                 </span>
               </Link>
 
               <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
                 <span className="text-sm font-medium tracking-wider">
-                  WATCH DEMO
+                  VIEW DEMO
                 </span>
               </button>
             </div>

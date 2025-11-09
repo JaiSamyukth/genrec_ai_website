@@ -3,73 +3,73 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
+  DollarSign, 
   FileText, 
-  MessageSquare, 
-  HelpCircle, 
-  GraduationCap, 
-  BookOpen, 
-  Library,
-  Upload,
-  Brain,
-  Trophy
+  Calendar, 
+  CreditCard, 
+  Receipt, 
+  PieChart,
+  Users,
+  Repeat,
+  CheckCircle
 } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
   {
     icon: FileText,
-    title: 'Smart PDF Processing',
-    description: 'AI reads, understands, and extracts insights from any document.',
+    title: 'Automated Invoicing',
+    description: 'Generate professional invoices automatically with customizable templates and branding.',
   },
   {
-    icon: MessageSquare,
-    title: 'Interactive AI Chat',
-    description: 'Ask, learn, and explore through natural conversation.',
+    icon: Repeat,
+    title: 'Recurring Payments',
+    description: 'Set up subscription billing with automatic payment collection and reminders.',
   },
   {
-    icon: HelpCircle,
-    title: 'Question Generation',
-    description: 'Auto-generate questions to test understanding.',
+    icon: Receipt,
+    title: 'Expense Tracking',
+    description: 'Track business expenses with categorization, receipt uploads, and approval workflows.',
   },
   {
-    icon: GraduationCap,
-    title: 'Quiz Mode',
-    description: 'Reinforce knowledge through adaptive quizzes.',
+    icon: Users,
+    title: 'Client Management',
+    description: 'Centralized client database with billing history, payment terms, and contact details.',
   },
   {
-    icon: BookOpen,
-    title: 'Smart Notes',
-    description: 'Seamlessly integrated AI-powered notes.',
+    icon: PieChart,
+    title: 'Financial Reports',
+    description: 'Comprehensive reports on revenue, expenses, profit margins, and tax summaries.',
   },
   {
-    icon: Library,
-    title: 'Personal Library',
-    description: 'Organize all your materials with intelligent search.',
+    icon: CreditCard,
+    title: 'Payment Gateway',
+    description: 'Multiple payment options with secure processing and automatic reconciliation.',
   },
 ]
 
 const processSteps = [
   {
-    icon: Upload,
+    icon: Users,
     number: '01',
-    title: 'Upload',
-    description: 'Drag and drop any PDF. Our system processes it instantly using advanced RAG and NLP models.',
+    title: 'Setup',
+    description: 'Add clients with billing details, payment terms, and tax configurations. Create service/product catalogs with pricing.',
   },
   {
-    icon: Brain,
+    icon: Repeat,
     number: '02',
-    title: 'Learn',
-    description: 'Ask anything — get deep, contextual answers with examples, analogies, and summaries.',
+    title: 'Bill',
+    description: 'Generate invoices automatically based on time tracking, milestones, or subscriptions. Send via email with payment links.',
   },
   {
-    icon: Trophy,
+    icon: CheckCircle,
     number: '03',
-    title: 'Master',
-    description: 'Generate quizzes, track your learning streak, and convert theory into clarity.',
+    title: 'Track',
+    description: 'Monitor payment status, send automated reminders, track expenses, and generate financial reports for tax compliance.',
   },
 ]
 
-export default function LuminaPage() {
+export default function BillingPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -101,22 +101,21 @@ export default function LuminaPage() {
               className="mb-6 inline-block"
             >
               <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
-                OUR FLAGSHIP PRODUCT
+                INTERNAL BILLING MODULE
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              LuminaIQ
+              Billing System
             </h1>
             
             <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
-              Transform any PDF into a living, intelligent learning experience.
+              Comprehensive billing and financial management.
             </p>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-              LuminaIQ turns static documents into interactive conversations. Upload your notes, 
-              research papers, or books — our AI processes, explains, and quizzes you on them. 
-              It's not just study automation. It's cognitive augmentation.
+              From invoice generation to expense tracking and financial reporting, manage your entire 
+              billing workflow in one system. Automated reminders, recurring payments, and tax compliance built in.
             </p>
           </motion.div>
         </div>
@@ -233,10 +232,10 @@ export default function LuminaPage() {
             className="text-center"
           >
             <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Learning?
+              Ready to Automate Your Billing?
             </h2>
             <p className="mb-8 text-lg text-gray-400">
-              Join the waitlist and be among the first to experience the future of learning.
+              See how our billing system can process invoices 50% faster and improve cash flow.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <Link
@@ -244,13 +243,13 @@ export default function LuminaPage() {
                 className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
               >
                 <span className="relative z-10 text-sm font-medium tracking-wider">
-                  JOIN WAITLIST
+                  REQUEST DEMO
                 </span>
               </Link>
 
               <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
                 <span className="text-sm font-medium tracking-wider">
-                  WATCH DEMO
+                  VIEW PRICING
                 </span>
               </button>
             </div>

@@ -18,30 +18,45 @@ import { ContactModal } from './ContactModal'
 
 const products = [
   {
-    title: 'Educational Websites',
-    href: '/products/educational-website',
-    description: 'Attract more students and grow enrollments with websites that convert',
+    title: 'Lumina IQ',
+    href: '/products/lumina-iq',
+    description: 'AI-powered learning platform with interactive PDF processing',
   },
   {
-    title: 'Construction Websites',
-    href: '/products/construction-website',
-    description: 'Win high-value contracts with professional portfolio websites',
+    title: 'Tabble',
+    href: '/products/tabble',
+    description: 'Premium dining tablet system for luxury hotels',
   },
   {
-    title: 'Restaurant Websites',
-    href: '/products/restaurant-website',
-    description: 'Drive reservations and boost revenue with stunning restaurant sites',
+    title: 'DataScience Agent',
+    href: '/products/data-agent',
+    description: 'Analytical automation and predictive insights',
   },
-    {
-      title: 'Lumina IQ',
-      href: '/products/lumina-iq',
-      description: 'AI learning platform for personalized education at scale',
-    },
-    {
-      title: 'Tabble',
-      href: '/products/tabble',
-      description: 'Luxury table management app for hotels and restaurants',
-    },
+  {
+    title: 'HRMS',
+    href: '/products/hrms',
+    description: 'Employee & attendance management system',
+  },
+  {
+    title: 'Anonymous Feedback',
+    href: '/products/feedback-system',
+    description: 'Staff-student feedback platform with sentiment analysis',
+  },
+  {
+    title: 'Billing System',
+    href: '/products/billing',
+    description: 'Internal billing module with automated invoicing',
+  },
+  {
+    title: 'CRM Application',
+    href: '/products/crm',
+    description: 'Business management and sales pipeline system',
+  },
+  {
+    title: 'Invoice Generator',
+    href: '/products/invoice-generator',
+    description: 'Lightweight invoice automation tool',
+  },
 ]
 
 export function Header() {
@@ -120,6 +135,13 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/divisions" legacyBehavior passHref>
+                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    Divisions
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/case-studies" legacyBehavior passHref>
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                     Case Studies
@@ -189,6 +211,13 @@ export function Header() {
                   </Link>
                 ))}
               </div>
+              <Link
+                href="/divisions"
+                className="block py-2 text-sm hover:text-accent-metal transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Divisions
+              </Link>
               <Link
                 href="/case-studies"
                 className="block py-2 text-sm hover:text-accent-metal transition-colors"

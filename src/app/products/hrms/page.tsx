@@ -3,73 +3,73 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { 
-  FileText, 
-  MessageSquare, 
-  HelpCircle, 
-  GraduationCap, 
-  BookOpen, 
-  Library,
-  Upload,
-  Brain,
-  Trophy
+  Users, 
+  Clock, 
+  Calendar, 
+  TrendingUp, 
+  Shield, 
+  Award,
+  UserCheck,
+  ClipboardCheck,
+  CheckCircle
 } from 'lucide-react'
 import Link from 'next/link'
 
 const features = [
   {
-    icon: FileText,
-    title: 'Smart PDF Processing',
-    description: 'AI reads, understands, and extracts insights from any document.',
+    icon: Clock,
+    title: 'Biometric Attendance',
+    description: 'Seamless integration with biometric devices for accurate time tracking and fraud prevention.',
   },
   {
-    icon: MessageSquare,
-    title: 'Interactive AI Chat',
-    description: 'Ask, learn, and explore through natural conversation.',
+    icon: Calendar,
+    title: 'Leave Management',
+    description: 'Automated leave requests, approvals, and balance tracking with configurable policies.',
   },
   {
-    icon: HelpCircle,
-    title: 'Question Generation',
-    description: 'Auto-generate questions to test understanding.',
+    icon: TrendingUp,
+    title: 'Performance Tracking',
+    description: 'Set goals, conduct reviews, and monitor employee performance with data-driven insights.',
   },
   {
-    icon: GraduationCap,
-    title: 'Quiz Mode',
-    description: 'Reinforce knowledge through adaptive quizzes.',
+    icon: Users,
+    title: 'Employee Database',
+    description: 'Centralized employee information with documents, contracts, and employment history.',
   },
   {
-    icon: BookOpen,
-    title: 'Smart Notes',
-    description: 'Seamlessly integrated AI-powered notes.',
+    icon: Award,
+    title: 'Payroll Processing',
+    description: 'Automated salary calculations with tax deductions, bonuses, and compliance reporting.',
   },
   {
-    icon: Library,
-    title: 'Personal Library',
-    description: 'Organize all your materials with intelligent search.',
+    icon: Shield,
+    title: 'Role-Based Access',
+    description: 'Secure data access with customizable permissions for different organizational roles.',
   },
 ]
 
 const processSteps = [
   {
-    icon: Upload,
+    icon: UserCheck,
     number: '01',
-    title: 'Upload',
-    description: 'Drag and drop any PDF. Our system processes it instantly using advanced RAG and NLP models.',
+    title: 'Onboard',
+    description: 'Add employees with complete profiles, documents, and employment details. Set up departments, designations, and reporting structures.',
   },
   {
-    icon: Brain,
+    icon: ClipboardCheck,
     number: '02',
-    title: 'Learn',
-    description: 'Ask anything — get deep, contextual answers with examples, analogies, and summaries.',
+    title: 'Track',
+    description: 'Monitor attendance via biometrics or manual check-ins. Employees submit leave requests and managers approve with one click.',
   },
   {
-    icon: Trophy,
+    icon: CheckCircle,
     number: '03',
-    title: 'Master',
-    description: 'Generate quizzes, track your learning streak, and convert theory into clarity.',
+    title: 'Optimize',
+    description: 'Generate payroll automatically based on attendance and leave data. Track performance metrics and identify areas for improvement.',
   },
 ]
 
-export default function LuminaPage() {
+export default function HRMSPage() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -101,22 +101,21 @@ export default function LuminaPage() {
               className="mb-6 inline-block"
             >
               <span className="inline-block border border-gray-900 bg-white px-4 py-2 text-sm font-medium tracking-wider text-gray-900">
-                OUR FLAGSHIP PRODUCT
+                EMPLOYEE & ATTENDANCE MANAGEMENT
               </span>
             </motion.div>
 
             <h1 className="mb-6 text-4xl font-light tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
-              LuminaIQ
+              HRMS
             </h1>
             
             <p className="mb-8 text-xl font-light leading-relaxed text-gray-600 sm:text-2xl">
-              Transform any PDF into a living, intelligent learning experience.
+              Complete HR management made simple.
             </p>
 
             <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-600">
-              LuminaIQ turns static documents into interactive conversations. Upload your notes, 
-              research papers, or books — our AI processes, explains, and quizzes you on them. 
-              It's not just study automation. It's cognitive augmentation.
+              From attendance tracking to payroll processing, streamline your entire HR workflow. 
+              Biometric integration, automated leave management, and performance monitoring—all in one system.
             </p>
           </motion.div>
         </div>
@@ -233,10 +232,10 @@ export default function LuminaPage() {
             className="text-center"
           >
             <h2 className="mb-6 text-3xl font-light tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Learning?
+              Ready to Streamline Your HR Operations?
             </h2>
             <p className="mb-8 text-lg text-gray-400">
-              Join the waitlist and be among the first to experience the future of learning.
+              See how our HRMS can reduce admin time by 60% and improve workforce management.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
               <Link
@@ -244,13 +243,13 @@ export default function LuminaPage() {
                 className="group relative overflow-hidden border border-white bg-white px-8 py-4 text-gray-900 transition-all duration-300 hover:bg-gray-100"
               >
                 <span className="relative z-10 text-sm font-medium tracking-wider">
-                  JOIN WAITLIST
+                  REQUEST DEMO
                 </span>
               </Link>
 
               <button className="group border border-white bg-transparent px-8 py-4 text-white transition-all duration-300 hover:bg-white hover:text-gray-900">
                 <span className="text-sm font-medium tracking-wider">
-                  WATCH DEMO
+                  VIEW PRICING
                 </span>
               </button>
             </div>
